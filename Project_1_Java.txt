@@ -6,4 +6,7 @@ Pam pam
 Am editat fisieru
 Functioneaza 
 Trebe sa mearga
-Commit
+Commit to main 
+Test conflict
+
+Am modificat ceva iara ha ha ha - test conflict
