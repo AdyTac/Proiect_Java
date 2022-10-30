@@ -6,3 +6,4 @@ Pam pam
 Am editat fisieru
 Functioneaza 
 Trebe sa mearga
+Commit
