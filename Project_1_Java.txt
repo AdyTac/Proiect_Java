@@ -3,3 +3,6 @@ Manual Java
 Teste Java
 incarca
 Pam pam
+Am editat fisieru
+Functioneaza 
+Trebe sa mearga
