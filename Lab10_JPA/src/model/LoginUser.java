@@ -49,4 +49,10 @@ public class LoginUser implements Serializable {
 		this.user = user;
 	}
 
+	@Override
+	public String toString() {
+		return "LoginUser [idUser=" + idUser + ", password=" + password + ", user=" + user + "]";
+	}
+	
+
 }

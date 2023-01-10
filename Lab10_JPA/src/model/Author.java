@@ -82,4 +82,11 @@ public class Author implements Serializable {
 		this.name = name;
 	}
 
+	@Override
+	public String toString() {
+		return "Author [idAuthors=" + idAuthors + ", aName=" + aName + ", aRole=" + aRole + ", country=" + country
+				+ ", id=" + id + ", name=" + name + "]";
+	}
+	
+
 }

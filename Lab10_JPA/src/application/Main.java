@@ -10,13 +10,14 @@ import javafx.scene.Scene;
 
 public class Main extends Application {
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage Stage) {
 		try {
-			primaryStage.setResizable(false);
+			Stage.setResizable(false);
 			Parent root = FXMLLoader.load(getClass().getResource("/resourceview/Login.fxml"));
 			Scene scene = new Scene(root);
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			Stage.setTitle("Login to application movie database");
+			Stage.setScene(scene);
+			Stage.show();
 		
 
 		} catch(Exception e) {

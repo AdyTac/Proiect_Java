@@ -23,11 +23,14 @@ import services.UserServices;
 
 import javafx.fxml.FXMLLoader;
 public class UserController {
+	@FXML
+	public ListView<LoginUser> userListView;
+
 	
 	@FXML
 	private Label myLabel;
 	@FXML
-	private Button addNewUser;
+	private Button loginButton;
 	@FXML
 	private TextField userField;
 	@FXML
@@ -40,13 +43,18 @@ public class UserController {
 	private TextField registerPasswField;
 	@FXML
 	void initialize() {
+		UserServices userService = new UserServices();
+		List<LoginUser> allUsers = userService.getAllUsers();
+		System.out.println(allUsers);
+		
+
 		
 	}
 	@FXML
 	private void newRegisterMet(ActionEvent event) {
 	    try {
 	    	
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resourceView/AddNewMovieInterface.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resourceView/AddUserInterface.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Register new user for access");
@@ -80,16 +88,14 @@ public class UserController {
 	}
 	
 	@FXML
-	private void addNewUsers(ActionEvent event) {
+	private void LoginToApplication(ActionEvent event) {
+		String loginUser=userField.getText();
+		String loginPassword=passwField.getText();
+		
 		UserServices userService = new UserServices();
 		try {
-		System.out.println(userService.findUser("ady", "ady"));	;
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}
-		
-		Stage stageTestButton = (Stage) addNewUser.getScene().getWindow();
+		System.out.println(userService.findUser(loginUser, loginPassword));
+		Stage stageTestButton = (Stage) loginButton.getScene().getWindow();
 		stageTestButton.close();
 		try {
 			
@@ -102,6 +108,13 @@ public class UserController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		} catch (Exception e) {
+			System.out.println("Wrong user or password");
+			
+			e.printStackTrace();
+		}
+		/*
+		*/
 	}
 
 	

@@ -80,7 +80,7 @@ public class MenuController {
 	@FXML
 	private void movieInterface(ActionEvent e3) {
 		try {
-	    	
+			
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resourceView/DeleteMovie.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();

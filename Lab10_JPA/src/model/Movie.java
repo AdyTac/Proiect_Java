@@ -70,4 +70,11 @@ public class Movie implements Serializable {
 		this.year = year;
 	}
 
+	@Override
+	public String toString() {
+		return "Movie [idMovie=" + idMovie + ", movie_ID=" + movie_ID + ", movieName=" + movieName + ", name=" + name
+				+ ", year=" + year + "]";
+	}
+	
+
 }
