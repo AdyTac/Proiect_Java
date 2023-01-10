@@ -1,3 +1,4 @@
+
 package dao;
 
 import java.util.List;
@@ -9,16 +10,16 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Root;
+import model.Actor;
 
-import model.KinfOfMovie;
 
 
-public class MovieDao extends Dao<KinfOfMovie> {
+public class ActorDao extends Dao<Actor> {
 
 		private EntityManagerFactory factory;
 
-	public MovieDao(EntityManagerFactory factory) {
-		super(KinfOfMovie.class);
+	public ActorDao(EntityManagerFactory factory) {
+		super(Actor.class);
 		this.factory = factory;
 	}
 
@@ -32,5 +33,5 @@ public class MovieDao extends Dao<KinfOfMovie> {
 		}
 	}
 
-	
+
 }

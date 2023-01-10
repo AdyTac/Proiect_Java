@@ -23,7 +23,7 @@ public class MenuController {
 	@FXML
 	public ListView<LoginUser> userListView;
 	@FXML
-	private Button authorButton;
+	private Button actorButton;
 	@FXML
 	private Button typeOfMovieButton;
 	@FXML
@@ -56,7 +56,18 @@ public class MenuController {
 		userListView.setItems(FXCollections.observableArrayList(new ArrayList<LoginUser>(allUsers)));
 	}
 	@FXML
-	private void authorInterface(ActionEvent e1) {
+	private void actorInterface(ActionEvent e1) {
+try {
+			
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resourceView/AddActor.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setTitle("Actor add/delete");
+			stage.setScene(new Scene(root));
+			stage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	@FXML

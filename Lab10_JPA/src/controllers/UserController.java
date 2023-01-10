@@ -46,9 +46,6 @@ public class UserController {
 		UserServices userService = new UserServices();
 		List<LoginUser> allUsers = userService.getAllUsers();
 		System.out.println(allUsers);
-		
-
-		
 	}
 	@FXML
 	private void newRegisterMet(ActionEvent event) {
@@ -86,7 +83,6 @@ public class UserController {
 			e.printStackTrace();
 			}
 	}
-	
 	@FXML
 	private void LoginToApplication(ActionEvent event) {
 		String loginUser=userField.getText();

@@ -56,7 +56,7 @@
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="authorButton" layoutX="32.0" layoutY="149.0" mnemonicParsing="false" onAction="#authorInterface" prefHeight="25.0" prefWidth="118.0" text="Add authors" textFill="#e40c0c">
+            <Button fx:id="actorButton" layoutX="32.0" layoutY="149.0" mnemonicParsing="false" onAction="#actorInterface" prefHeight="25.0" prefWidth="118.0" text="Actor add/delete" textFill="#e40c0c">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>

@@ -14,11 +14,17 @@ public class Distribution implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_distribution")
 	private int idDistribution;
 
 	private String director;
+
+	private String director;
+
+	@Column(name="id_distribution")
+	private int idDistribution;
+
+	private String scenario;
 
 	private String scenario;
 
@@ -41,6 +47,22 @@ public class Distribution implements Serializable {
 		this.director = director;
 	}
 
+	public String getDirector() {
+		return this.director;
+	}
+
+	public void setDirector(String director) {
+		this.director = director;
+	}
+
+	public int getIdDistribution() {
+		return this.idDistribution;
+	}
+
+	public void setIdDistribution(int idDistribution) {
+		this.idDistribution = idDistribution;
+	}
+
 	public String getScenario() {
 		return this.scenario;
 	}
@@ -49,11 +71,12 @@ public class Distribution implements Serializable {
 		this.scenario = scenario;
 	}
 
-	@Override
-	public String toString() {
-		return "Distribution [idDistribution=" + idDistribution + ", director=" + director + ", scenario=" + scenario
-				+ "]";
+	public String getScenario() {
+		return this.scenario;
 	}
-	
+
+	public void setScenario(String scenario) {
+		this.scenario = scenario;
+	}
 
 }

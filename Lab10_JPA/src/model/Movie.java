@@ -14,11 +14,16 @@ public class Movie implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_movie")
+	private int idMovie;
+
 	@Column(name="id_movie")
 	private int idMovie;
 
 	private int movie_ID;
+
+	@Column(name="movie_name")
+	private String movieName;
 
 	@Column(name="movie_name")
 	private String movieName;
@@ -28,6 +33,14 @@ public class Movie implements Serializable {
 	private String year;
 
 	public Movie() {
+	}
+
+	public int getIdMovie() {
+		return this.idMovie;
+	}
+
+	public void setIdMovie(int idMovie) {
+		this.idMovie = idMovie;
 	}
 
 	public int getIdMovie() {
@@ -54,6 +67,14 @@ public class Movie implements Serializable {
 		this.movieName = movieName;
 	}
 
+	public String getMovieName() {
+		return this.movieName;
+	}
+
+	public void setMovieName(String movieName) {
+		this.movieName = movieName;
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -69,12 +90,5 @@ public class Movie implements Serializable {
 	public void setYear(String year) {
 		this.year = year;
 	}
-
-	@Override
-	public String toString() {
-		return "Movie [idMovie=" + idMovie + ", movie_ID=" + movie_ID + ", movieName=" + movieName + ", name=" + name
-				+ ", year=" + year + "]";
-	}
-	
 
 }
