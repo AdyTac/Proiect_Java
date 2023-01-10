@@ -11,9 +11,9 @@
 
 <AnchorPane prefHeight="244.0" prefWidth="343.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.UserController">
    <children>
-      <AnchorPane layoutX="-14.0" layoutY="-23.0" prefHeight="242.0" prefWidth="357.0">
+      <AnchorPane layoutY="1.0" prefHeight="289.0" prefWidth="396.0">
          <children>
-            <Button fx:id="addNewUser" layoutX="169.0" layoutY="190.0" mnemonicParsing="false" onAction="#addNewUsers" text="Login" />
+            <Button fx:id="addNewUser" layoutX="179.0" layoutY="169.0" mnemonicParsing="false" onAction="#addNewUsers" text="Login" />
             <TextField fx:id="userField" layoutX="140.0" layoutY="88.0" />
             <Label layoutX="69.0" layoutY="92.0" text="User" />
             <Label layoutX="68.0" layoutY="138.0" text="Password" />
@@ -22,6 +22,8 @@
                   <Font size="18.0" />
                </font></Label>
             <PasswordField fx:id="passwField" layoutX="140.0" layoutY="134.0" />
+            <Label layoutX="232.0" layoutY="242.0" text="New User" />
+            <Button fx:id="newRegister" layoutX="308.0" layoutY="238.0" mnemonicParsing="false" onAction="#newRegisterMet" text="Register" />
          </children>
       </AnchorPane>
    </children>

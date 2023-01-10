@@ -33,25 +33,51 @@ public class UserController {
 	@FXML
 	private TextField passwField;
 	@FXML
+	private Button newRegister;
+	@FXML
+	private TextField registerUserField;
+	@FXML
+	private TextField registerPasswField;
+	@FXML
 	void initialize() {
-		System.out.println("Application is running");
-	}
-
-	
-
-	
-	//	UserServices userService = new UserServices();
-		//LoginUser new1=new LoginUser();
 		
-	//	String user=userField.getText();
-	//	String password=passwField.getText();
-		//new1.setUser(user);
-		//new1.setPassword(password);
-	
-	  
-		//	userService.addUser(new1);
-		//	System.out.println("The Information are saved !");
-	
+	}
+	@FXML
+	private void newRegisterMet(ActionEvent event) {
+	    try {
+	    	
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resourceView/AddNewMovieInterface.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setTitle("Register new user for access");
+			stage.setScene(new Scene(root));
+			stage.show();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	@FXML
+	private void addNewUserU(ActionEvent event) {
+		UserServices userService = new UserServices();
+		LoginUser new1=new LoginUser();
+
+		String user=registerUserField.getText();
+		String password=registerPasswField.getText();
+		
+		new1.setPassword(password);
+		new1.setUser(user);
+		
+		try {
+			userService.addUser(new1);
+			System.out.println("The Information are saved !");
+			registerUserField.setText("");
+			registerPasswField.setText("");
+			
+			} catch (Exception e) {
+			e.printStackTrace();
+			}
+	}
 	
 	@FXML
 	private void addNewUsers(ActionEvent event) {
@@ -59,7 +85,7 @@ public class UserController {
 		try {
 		System.out.println(userService.findUser("ady", "ady"));	;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
