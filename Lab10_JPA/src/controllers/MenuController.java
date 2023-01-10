@@ -92,7 +92,7 @@ try {
 	private void movieInterface(ActionEvent e3) {
 		try {
 			
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resourceView/DeleteMovie.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resourceView/AddDeletMovieInterface.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Add new movie");

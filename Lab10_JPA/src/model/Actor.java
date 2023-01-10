@@ -15,41 +15,25 @@ public class Actor implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id_authors")
-	private int idAuthors;
-
-	@Column(name="a_name")
-	private String aName;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_actor")
+	private int idActor;
 
 	@Column(name="a_name")
 	private String aName;
 
 	@Column(name="a_role")
 	private String aRole;
-
-	@Column(name="a_role")
-	private String aRole;
-
-	@Column(name="id_authors")
-	private int idAuthors;
 
 	public Actor() {
 	}
 
-	public int getIdAuthors() {
-		return this.idAuthors;
+	public int getIdActor() {
+		return this.idActor;
 	}
 
-	public void setIdAuthors(int idAuthors) {
-		this.idAuthors = idAuthors;
-	}
-
-	public String getAName() {
-		return this.aName;
-	}
-
-	public void setAName(String aName) {
-		this.aName = aName;
+	public void setIdActor(int idActor) {
+		this.idActor = idActor;
 	}
 
 	public String getAName() {
@@ -68,20 +52,10 @@ public class Actor implements Serializable {
 		this.aRole = aRole;
 	}
 
-	public String getARole() {
-		return this.aRole;
+	@Override
+	public String toString() {
+		return "Actor [idActor=" + idActor + ", aName=" + aName + ", aRole=" + aRole + "]";
 	}
-
-	public void setARole(String aRole) {
-		this.aRole = aRole;
-	}
-
-	public int getIdAuthors() {
-		return this.idAuthors;
-	}
-
-	public void setIdAuthors(int idAuthors) {
-		this.idAuthors = idAuthors;
-	}
+	
 
 }

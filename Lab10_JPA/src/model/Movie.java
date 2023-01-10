@@ -2,6 +2,7 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.Date;
 
 
 /**
@@ -14,23 +15,17 @@ public class Movie implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_movie")
 	private int idMovie;
-
-	@Column(name="id_movie")
-	private int idMovie;
-
-	private int movie_ID;
 
 	@Column(name="movie_name")
 	private String movieName;
 
-	@Column(name="movie_name")
-	private String movieName;
+	private String time_Length;
 
-	private String name;
-
-	private String year;
+	@Temporal(TemporalType.DATE)
+	private Date year;
 
 	public Movie() {
 	}
@@ -43,22 +38,6 @@ public class Movie implements Serializable {
 		this.idMovie = idMovie;
 	}
 
-	public int getIdMovie() {
-		return this.idMovie;
-	}
-
-	public void setIdMovie(int idMovie) {
-		this.idMovie = idMovie;
-	}
-
-	public int getMovie_ID() {
-		return this.movie_ID;
-	}
-
-	public void setMovie_ID(int movie_ID) {
-		this.movie_ID = movie_ID;
-	}
-
 	public String getMovieName() {
 		return this.movieName;
 	}
@@ -67,27 +46,19 @@ public class Movie implements Serializable {
 		this.movieName = movieName;
 	}
 
-	public String getMovieName() {
-		return this.movieName;
+	public String getTime_Length() {
+		return this.time_Length;
 	}
 
-	public void setMovieName(String movieName) {
-		this.movieName = movieName;
+	public void setTime_Length(String time_Length) {
+		this.time_Length = time_Length;
 	}
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getYear() {
+	public Date getYear() {
 		return this.year;
 	}
 
-	public void setYear(String year) {
+	public void setYear(Date year) {
 		this.year = year;
 	}
 

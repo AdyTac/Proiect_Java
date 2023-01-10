@@ -15,13 +15,9 @@ public class KinfOfMovie implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_kind")
 	private int idKind;
-
-	@Column(name="id_kind")
-	private int idKind;
-
-	private String type_of;
 
 	private String type_of;
 
@@ -34,22 +30,6 @@ public class KinfOfMovie implements Serializable {
 
 	public void setIdKind(int idKind) {
 		this.idKind = idKind;
-	}
-
-	public int getIdKind() {
-		return this.idKind;
-	}
-
-	public void setIdKind(int idKind) {
-		this.idKind = idKind;
-	}
-
-	public String getType_of() {
-		return this.type_of;
-	}
-
-	public void setType_of(String type_of) {
-		this.type_of = type_of;
 	}
 
 	public String getType_of() {

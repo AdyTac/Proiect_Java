@@ -8,67 +8,62 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="895.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1069.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.MenuController">
    <children>
-      <Pane layoutX="23.0" layoutY="52.0" prefHeight="90.0" prefWidth="263.0" style="-fx-background-color: lightgreen;">
+      <Pane layoutX="23.0" layoutY="36.0" prefHeight="81.0" prefWidth="395.0" style="-fx-background-color: #bbe6fa;">
          <children>
-            <Label layoutX="39.0" layoutY="29.0" text="Movie Database " textFill="#b30dc6">
+            <Label layoutX="102.0" layoutY="25.0" text="Movie Database " textFill="#483d4a">
                <font>
                   <Font name="System Bold Italic" size="22.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="23.0" layoutY="443.0" prefHeight="144.0" prefWidth="280.0" style="-fx-background-color: lightgreen;">
+      <Pane layoutX="23.0" layoutY="556.0" prefHeight="164.0" prefWidth="395.0" style="-fx-background-color: #bbe6fa;">
          <children>
             <TextField fx:id="newTypeOf" layoutX="51.0" layoutY="47.0" prefHeight="25.0" prefWidth="165.0" />
-            <Label layoutX="96.0" layoutY="14.0" text="Kind of movie" textFill="#4b066b">
+            <Label layoutX="75.0" layoutY="14.0" text="Kind of movie - Genre " textFill="#4b066b">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="typeOfMovieButton" layoutX="73.0" layoutY="92.0" mnemonicParsing="false" onAction="#typeOfMoviInterface" prefHeight="25.0" prefWidth="118.0" text="Type of Movie" textFill="#f20f0f">
+            <Button fx:id="typeOfMovieButton" layoutX="73.0" layoutY="92.0" mnemonicParsing="false" onAction="#typeOfMoviInterface" prefHeight="25.0" prefWidth="118.0" text="Genre " textFill="#f20f0f">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
          </children>
       </Pane>
-      <Pane layoutX="343.0" layoutY="27.0" prefHeight="545.0" prefWidth="530.0" style="-fx-background-color: lightgreen;">
+      <Pane layoutX="427.0" layoutY="37.0" prefHeight="683.0" prefWidth="618.0" style="-fx-background-color: #bbe6fa;">
          <children>
-            <ListView fx:id="userListView" layoutX="24.0" layoutY="56.0" prefHeight="413.0" prefWidth="482.0" />
-            <Button fx:id="refreshButton" layoutX="14.0" layoutY="495.0" mnemonicParsing="false" onAction="#refreshList" text="Refresh" textFill="#722fbf">
+            <ListView fx:id="userListView" layoutX="24.0" layoutY="56.0" prefHeight="577.0" prefWidth="573.0" />
+            <Button fx:id="refreshButton" layoutX="457.0" layoutY="644.0" mnemonicParsing="false" onAction="#refreshList" prefHeight="25.0" prefWidth="81.0" text="Refresh" textFill="#722fbf">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>
             </Button>
             <Label layoutX="243.0" layoutY="11.0" text="List of movies">
                <font>
-                  <Font name="System Italic" size="15.0" />
+                  <Font name="System Bold" size="21.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="29.0" layoutY="167.0" prefHeight="246.0" prefWidth="188.0" style="-fx-background-color: lightgreen;">
+      <Pane layoutX="23.0" layoutY="126.0" prefHeight="408.0" prefWidth="395.0" style="-fx-background-color: #bbe6fa;">
          <children>
-            <Button fx:id="movieButton" layoutX="32.0" layoutY="38.0" mnemonicParsing="false" onAction="#movieInterface" prefHeight="25.0" prefWidth="118.0" text="Add Movie" textFill="#ee0a0a">
+            <Button fx:id="movieButton" layoutX="14.0" layoutY="26.0" mnemonicParsing="false" onAction="#movieInterface" prefHeight="25.0" prefWidth="118.0" text="Add Movie" textFill="#ee0a0a">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="actorButton" layoutX="32.0" layoutY="149.0" mnemonicParsing="false" onAction="#actorInterface" prefHeight="25.0" prefWidth="118.0" text="Actor add/delete" textFill="#e40c0c">
+            <Button fx:id="actorButton" layoutX="14.0" layoutY="75.0" mnemonicParsing="false" onAction="#actorInterface" prefHeight="25.0" prefWidth="118.0" text="Actor add/delete" textFill="#e40c0c">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="32.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Add Distribution" textFill="#ee0c0c">
+            <Button layoutX="14.0" layoutY="119.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Add Distribution" textFill="#ee0c0c">
                <font>
                   <Font name="Arial Bold Italic" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="deleteButton" layoutX="32.0" layoutY="78.0" mnemonicParsing="false" onAction="#deleteMovie" prefHeight="25.0" prefWidth="118.0" text="Delete Movie" textFill="#f20404">
-               <font>
-                  <Font name="System Bold Italic" size="12.0" />
                </font>
             </Button>
          </children>

@@ -15,6 +15,7 @@ public class LoginUser implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idUser;
 
 	private String password;
@@ -47,5 +48,11 @@ public class LoginUser implements Serializable {
 	public void setUser(String user) {
 		this.user = user;
 	}
+
+	@Override
+	public String toString() {
+		return "LoginUser [idUser=" + idUser + ", password=" + password + ", user=" + user + "]";
+	}
+	
 
 }
