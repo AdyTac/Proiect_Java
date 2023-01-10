@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.Date;
 
 
 /**
@@ -24,8 +23,7 @@ public class Movie implements Serializable {
 
 	private String time_Length;
 
-	@Temporal(TemporalType.DATE)
-	private Date year;
+	private String year;
 
 	public Movie() {
 	}
@@ -54,11 +52,11 @@ public class Movie implements Serializable {
 		this.time_Length = time_Length;
 	}
 
-	public Date getYear() {
+	public String getYear() {
 		return this.year;
 	}
 
-	public void setYear(Date year) {
+	public void setYear(String year) {
 		this.year = year;
 	}
 

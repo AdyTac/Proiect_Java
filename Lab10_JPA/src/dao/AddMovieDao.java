@@ -1,16 +1,15 @@
-
 package dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import model.Actor;
+import model.Movie;
 
-public class ActorDao extends Dao<Actor> {
+public class AddMovieDao extends Dao<Movie> {
 
 		private EntityManagerFactory factory;
 
-	public ActorDao(EntityManagerFactory factory) {
-		super(Actor.class);
+	public AddMovieDao(EntityManagerFactory factory) {
+		super(Movie.class);
 		this.factory = factory;
 	}
 

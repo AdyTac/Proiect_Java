@@ -35,6 +35,8 @@ public class AddDeleteActor {
 		try {
 		newActorService.addUser(newActor);
 		System.out.println("The Information are saved !");
+		nameField.setText("");
+		rolesField.setText("");
 		
 		} catch (Exception e) {
 		    e.printStackTrace();

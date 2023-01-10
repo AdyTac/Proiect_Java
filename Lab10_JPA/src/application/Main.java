@@ -18,7 +18,6 @@ public class Main extends Application {
 			Stage.setTitle("Login to application movie database");
 			Stage.setScene(scene);
 			Stage.show();
-		
 
 		} catch(Exception e) {
 			e.printStackTrace();
