@@ -14,6 +14,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.LoginUser;
+import model.Movie;
+import services.AddMovieService;
 import services.MovieService;
 import services.UserServices;
 import model.KinfOfMovie;
@@ -21,7 +23,10 @@ import model.KinfOfMovie;
 
 public class MenuController {
 	@FXML
-	public ListView<LoginUser> userListView;
+	public ListView<Movie> movieListView;
+	@FXML
+	public ListView<KinfOfMovie> genreListView;
+	
 	@FXML
 	private Button actorButton;
 	@FXML
@@ -40,20 +45,22 @@ public class MenuController {
 
 	@FXML
 	void initialize() {
-		UserServices userService = new UserServices();
-		List<LoginUser> allUsers = userService.getAllUsers();
-
-		System.out.println(allUsers);
-		userListView.setItems(FXCollections.observableArrayList(new ArrayList<LoginUser>(allUsers)));
+		AddMovieService newService =new AddMovieService();
+		List<Movie> allMovie =newService.getAllUsers();
+		
+		MovieService newGener=new MovieService();
+		List<KinfOfMovie> allGenre=newGener.getAllUsers();
+	
+		movieListView.setItems(FXCollections.observableArrayList(new ArrayList<Movie>(allMovie)));
+		genreListView.setItems(FXCollections.observableArrayList(new ArrayList<KinfOfMovie>(allGenre)));
 	}
 
 	@FXML
 	private void refreshList(ActionEvent e) {
-		UserServices userService = new UserServices();
-		List<LoginUser> allUsers = userService.getAllUsers();
-
-		System.out.println(allUsers);
-		userListView.setItems(FXCollections.observableArrayList(new ArrayList<LoginUser>(allUsers)));
+		AddMovieService newService =new AddMovieService();
+		List<Movie> allMovie =newService.getAllUsers();
+	
+		movieListView.setItems(FXCollections.observableArrayList(new ArrayList<Movie>(allMovie)));
 	}
 	@FXML
 	private void actorInterface(ActionEvent e1) {
@@ -106,6 +113,7 @@ try {
 	}
 	@FXML
 	private void deleteMovie(ActionEvent e4) {
+
 		 try {
 		    	
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resourceView/DeleteMovie.fxml"));
@@ -118,5 +126,20 @@ try {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+	}
+	@FXML
+	private void addDistribution()
+	{
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resourceView/AddDistribution.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setTitle("Add new director and scenarist");
+			stage.setScene(new Scene(root));
+			stage.show();
+		
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

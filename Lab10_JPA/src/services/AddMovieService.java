@@ -30,7 +30,6 @@ public class AddMovieService {
 		addMovieDao.remove(user, Id);
 	}
 
-
 	public List<Movie> getAllUsers() {
 		return addMovieDao.findAll();
 	}

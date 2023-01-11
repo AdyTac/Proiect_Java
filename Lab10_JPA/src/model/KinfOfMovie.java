@@ -40,4 +40,10 @@ public class KinfOfMovie implements Serializable {
 		this.type_of = type_of;
 	}
 
+	@Override
+	public String toString() {
+		return "KinfOfMovie [idKind=" + idKind + ", type_of=" + type_of + "]";
+	}
+	
+
 }

@@ -49,4 +49,11 @@ public class Distribution implements Serializable {
 		this.scenario = scenario;
 	}
 
+	@Override
+	public String toString() {
+		return "Distribution [idDistribution=" + idDistribution + ", director=" + director + ", scenario=" + scenario
+				+ "]";
+	}
+	
+
 }
