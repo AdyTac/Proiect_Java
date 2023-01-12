@@ -51,8 +51,8 @@ public class Distribution implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Distribution [idDistribution=" + idDistribution + ", director=" + director + ", scenario=" + scenario
-				+ "]";
+		return "" + idDistribution + ",Director: " + director + ", Scenario: " + scenario
+				+ "";
 	}
 	
 

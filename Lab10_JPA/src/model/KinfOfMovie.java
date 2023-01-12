@@ -42,7 +42,7 @@ public class KinfOfMovie implements Serializable {
 
 	@Override
 	public String toString() {
-		return "KinfOfMovie [idKind=" + idKind + ", type_of=" + type_of + "]";
+		return " "+idKind+ " - " + type_of + "";
 	}
 	
 

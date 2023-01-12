@@ -1,8 +1,18 @@
 package controllers;
 
+import java.awt.Label;
 import java.io.IOException;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
+
+import com.sun.glass.events.MouseEvent;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,20 +23,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.LoginUser;
 import model.Movie;
 import services.AddMovieService;
 import services.MovieService;
-import services.UserServices;
 import model.KinfOfMovie;
 
 
 public class MenuController {
+
 	@FXML
 	public ListView<Movie> movieListView;
 	@FXML
 	public ListView<KinfOfMovie> genreListView;
-	
 	@FXML
 	private Button actorButton;
 	@FXML
@@ -38,9 +46,17 @@ public class MenuController {
 	@FXML
 	private Button deleteButton;
 	@FXML
+	private Button removeGenre;
+	@FXML
 	private Button distributionButton;
 	@FXML
 	private TextField newTypeOf;
+	@FXML
+	private TextField removeField;
+	@FXML
+	private TextField timeLabel;
+	@FXML
+	private Label newTime;
 	
 
 	@FXML
@@ -53,14 +69,18 @@ public class MenuController {
 	
 		movieListView.setItems(FXCollections.observableArrayList(new ArrayList<Movie>(allMovie)));
 		genreListView.setItems(FXCollections.observableArrayList(new ArrayList<KinfOfMovie>(allGenre)));
-	}
+		}
 
 	@FXML
 	private void refreshList(ActionEvent e) {
 		AddMovieService newService =new AddMovieService();
 		List<Movie> allMovie =newService.getAllUsers();
+		
+		MovieService newGener=new MovieService();
+		List<KinfOfMovie> allGenre=newGener.getAllUsers();
 	
 		movieListView.setItems(FXCollections.observableArrayList(new ArrayList<Movie>(allMovie)));
+		genreListView.setItems(FXCollections.observableArrayList(new ArrayList<KinfOfMovie>(allGenre)));
 	}
 	@FXML
 	private void actorInterface(ActionEvent e1) {
@@ -141,5 +161,22 @@ try {
 		}catch (IOException e) {
 			e.printStackTrace();
 		}
+	  
+}
+	@FXML
+	private void removeSelectedGenre(ActionEvent e6)
+	{
+		int selectedID= genreListView.getSelectionModel().getSelectedIndex();
+		genreListView.getItems().remove(selectedID);
+		
+		
+		MovieService removeGener=new MovieService();
+		KinfOfMovie newGenre =new KinfOfMovie();
+		removeGener.
+		
+		System.out.println(selectedID);
+		removeGener.remove(newGenre, selectedID);
+		
 	}
+	
 }
