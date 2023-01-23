@@ -10,7 +10,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Root;
 
-import model.Actor;
 import model.Distribution;
 
 public class DistributionDao extends Dao<Distribution> {
@@ -40,7 +39,7 @@ public class DistributionDao extends Dao<Distribution> {
 		
 		ParameterExpression<String> paramName = cb.parameter(String.class);
 	//	cr.select(root).where(cb.like(root.get("type_of"), name));
-		cr.select(root).where(cb.equal(root.get("type_of"), paramName));
+		cr.select(root).where(cb.like(root.get("director"), paramName));
 		TypedQuery<Distribution> query = em.createQuery(cr);
 		query.setParameter(paramName, name);
 		

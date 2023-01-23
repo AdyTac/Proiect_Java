@@ -40,7 +40,7 @@ public class MovieService {
 		KinfOfMovie u = type_of.get(0);
 		int idKindOf= u.getIdKind();
 		System.out.println(idKindOf);
-		movieDao.remove(u,idKindOf );
+	//	movieDao.remove(u,idKindOf );
 		return u;
 	}
 	

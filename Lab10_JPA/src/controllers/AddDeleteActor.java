@@ -1,11 +1,16 @@
 package controllers;
 
+import java.util.List;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import model.Actor;
+
+import model.Actors;
+import model.LoginUser;
 import services.ActorService;
+import services.AddMovieService;
 
 
 public class AddDeleteActor {
@@ -24,7 +29,7 @@ public class AddDeleteActor {
 	private void addNewActor(ActionEvent e1)
 	{
 		ActorService  newActorService= new ActorService();
-		Actor newActor=new Actor();
+		Actors newActor=new Actors();
 		
 		String name=nameField.getText();
 		String roles=rolesField.getText();
@@ -46,6 +51,17 @@ public class AddDeleteActor {
 	@FXML
 	private void deleteActor(ActionEvent e2)
 	{
+		String actorName=deleteActorField.getText();
+		ActorService newObj= new ActorService();
+		List<Actors> allUsers = newObj.getAllUsers();
+		System.out.println(allUsers);
+		try {
+			newObj.findType(actorName);
+		} catch (Exception e) {
+			System.out.println("The name is not in the list !");
+			e.printStackTrace();
+		}
+		
 		
 		
 	}

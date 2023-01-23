@@ -40,7 +40,7 @@ public class AddMovieDao extends Dao<Movie> {
 		
 		ParameterExpression<String> paramName = cb.parameter(String.class);
 	//	cr.select(root).where(cb.like(root.get("type_of"), name));
-		cr.select(root).where(cb.equal(root.get("type_of"), paramName));
+		cr.select(root).where(cb.like(root.get("movieName"), paramName));
 		TypedQuery<Movie> query = em.createQuery(cr);
 		query.setParameter(paramName, name);
 		

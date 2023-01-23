@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import model.Movie;
 import services.AddMovieService;
+import services.MovieService;
 
 public class AddDeleteMovie {
 
@@ -58,7 +59,17 @@ public class AddDeleteMovie {
 	@FXML
 	private void deleteMovie(ActionEvent e2)
 	{
-		String movieName=deleteMovieField.getText();
+
+		String remName= deleteMovieField.getText();
+		AddMovieService newObj =new AddMovieService();
+		try {
+		newObj.findType(remName);
+		System.out.println(remName);
+	 	} catch (Exception e) {
+		
+			e.printStackTrace();
+		}
+		deleteMovieField.setText(" ");
 		
 	}
 	
