@@ -33,7 +33,7 @@ public class UserDao extends Dao<LoginUser> {
 		}
 	}
 
-	// for login
+
 	public List<LoginUser> find(String name) {
 		EntityManager em = getEntityManager();
 		CriteriaBuilder cb = em.getCriteriaBuilder();

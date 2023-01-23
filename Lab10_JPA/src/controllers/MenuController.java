@@ -11,6 +11,10 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import com.sun.glass.events.MouseEvent;
 
 import javafx.collections.FXCollections;
@@ -27,6 +31,7 @@ import model.Movie;
 import services.AddMovieService;
 import services.MovieService;
 import model.KinfOfMovie;
+import model.LoginUser;
 
 
 public class MenuController {
@@ -166,17 +171,18 @@ try {
 	@FXML
 	private void removeSelectedGenre(ActionEvent e6)
 	{
-		int selectedID= genreListView.getSelectionModel().getSelectedIndex();
-		genreListView.getItems().remove(selectedID);
+		String remName= removeField.getText();
+		MovieService newObj =new MovieService();
+		try {
+		newObj.findType(remName);
+		System.out.println(remName);
+	 	} catch (Exception e) {
 		
-		
-		MovieService removeGener=new MovieService();
-		KinfOfMovie newGenre =new KinfOfMovie();
-		removeGener.
-		
-		System.out.println(selectedID);
-		removeGener.remove(newGenre, selectedID);
+			e.printStackTrace();
+		}
+		removeField.setText(" ");
 		
 	}
+	
 	
 }

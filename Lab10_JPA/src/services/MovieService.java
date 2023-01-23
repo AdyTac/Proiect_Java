@@ -4,6 +4,7 @@ import java.util.List;
 import javax.persistence.Persistence;
 import dao.MovieDao;
 import model.KinfOfMovie;
+import model.LoginUser;
 
 public class MovieService {
 	private MovieDao movieDao;
@@ -32,7 +33,21 @@ public class MovieService {
 	public List<KinfOfMovie> getAllUsers() {
 		return movieDao.findAll();
 	}
-
+	
+	public KinfOfMovie findType(String type)throws Exception 
+	{
+		List<KinfOfMovie> type_of = movieDao.find(type);
+		KinfOfMovie u = type_of.get(0);
+		int idKindOf= u.getIdKind();
+		System.out.println(idKindOf);
+		movieDao.remove(u,idKindOf );
+		return u;
+	}
+	
+}
+	
+	
+	
 	
 
-}
+

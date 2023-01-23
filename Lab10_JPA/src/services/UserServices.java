@@ -39,7 +39,7 @@ public class UserServices {
 		return userDao.findAll();
 	}
 
-	/// for login
+
 		public LoginUser findUser(String user, String pass) throws Exception {
 			List<LoginUser> users = userDao.find(user);
 			if (users.size() == 0) {

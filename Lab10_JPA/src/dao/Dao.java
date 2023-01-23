@@ -68,6 +68,20 @@ public abstract class Dao<T> {
 		}
 		return null;
 	}
+	public T findName(String name) {
+		EntityManager em = getEntityManager();
+		try {
+			T ret = (T) em.find(this.entityClass, name);
+			return ret;
+		} catch (RuntimeException e) {
+			em.getTransaction().rollback();
+
+		} finally {
+			em.close();
+		}
+		return null;
+	}
+	
 
 	public List<T> findAll() {
 		EntityManager em = getEntityManager();
