@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -25,6 +27,11 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
+            <ImageView fitHeight="82.0" fitWidth="92.0" layoutX="14.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imagesView/Movie2.JPG" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Pane layoutX="341.0" layoutY="14.0" prefHeight="222.0" prefWidth="489.0" style="-fx-background-color: #bbe6fa;">

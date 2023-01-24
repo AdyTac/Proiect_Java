@@ -19,11 +19,11 @@ public class Actor implements Serializable {
 	@Column(name="id_actor")
 	private int idActor;
 
-	@Column(name="a_name")
-	private String aName;
+	private String actorFirstName;
 
-	@Column(name="a_role")
-	private String aRole;
+	private String actorName;
+
+	private String actorRole;
 
 	public Actor() {
 	}
@@ -36,26 +36,28 @@ public class Actor implements Serializable {
 		this.idActor = idActor;
 	}
 
-	public String getAName() {
-		return this.aName;
+	public String getActorFirstName() {
+		return this.actorFirstName;
 	}
 
-	public void setAName(String aName) {
-		this.aName = aName;
+	public void setActorFirstName(String actorFirstName) {
+		this.actorFirstName = actorFirstName;
 	}
 
-	public String getARole() {
-		return this.aRole;
+	public String getActorName() {
+		return this.actorName;
 	}
 
-	public void setARole(String aRole) {
-		this.aRole = aRole;
+	public void setActorName(String actorName) {
+		this.actorName = actorName;
 	}
 
-	@Override
-	public String toString() {
-		return "Actor [idActor=" + idActor + ", aName=" + aName + ", aRole=" + aRole + "]";
+	public String getActorRole() {
+		return this.actorRole;
 	}
-	
+
+	public void setActorRole(String actorRole) {
+		this.actorRole = actorRole;
+	}
 
 }

@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -35,6 +37,16 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
+            <ImageView fitHeight="69.0" fitWidth="99.0" layoutX="459.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imagesView/Movie2.JPG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="63.0" fitWidth="72.0" layoutX="459.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/ImageView/Movie2.JPG" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Pane layoutX="36.0" layoutY="285.0" prefHeight="143.0" prefWidth="541.0" style="-fx-background-color: #bbe6fa;">

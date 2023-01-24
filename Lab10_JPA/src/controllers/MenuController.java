@@ -2,21 +2,8 @@ package controllers;
 
 import java.awt.Label;
 import java.io.IOException;
-import java.sql.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
-import com.sun.glass.events.MouseEvent;
-
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,7 +18,6 @@ import model.Movie;
 import services.AddMovieService;
 import services.MovieService;
 import model.KinfOfMovie;
-import model.LoginUser;
 
 
 public class MenuController {
@@ -63,6 +49,7 @@ public class MenuController {
 	@FXML
 	private Label newTime;
 	
+	
 
 	@FXML
 	void initialize() {
@@ -74,6 +61,7 @@ public class MenuController {
 	
 		movieListView.setItems(FXCollections.observableArrayList(new ArrayList<Movie>(allMovie)));
 		genreListView.setItems(FXCollections.observableArrayList(new ArrayList<KinfOfMovie>(allGenre)));
+			
 		}
 
 	@FXML

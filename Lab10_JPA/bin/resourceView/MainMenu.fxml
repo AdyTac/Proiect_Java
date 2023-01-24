@@ -4,19 +4,25 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="987.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="742.0" prefWidth="987.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.MenuController">
    <children>
       <Pane layoutX="23.0" layoutY="36.0" prefHeight="81.0" prefWidth="395.0" style="-fx-background-color: #bbe6fa;">
          <children>
-            <Label layoutX="102.0" layoutY="25.0" text="Movie Database " textFill="#483d4a">
-               <font>
-                  <Font name="System Bold Italic" size="22.0" />
-               </font>
-            </Label>
+            <ImageView fitHeight="70.0" fitWidth="442.0" layoutX="64.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imagesView/Movies3.JPG" />
+               </image></ImageView>
+            <ImageView fitHeight="60.0" fitWidth="304.0" layoutX="78.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/ImageView/Movies3.JPG" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Pane layoutX="23.0" layoutY="473.0" prefHeight="247.0" prefWidth="395.0" style="-fx-background-color: #bbe6fa;">
@@ -39,22 +45,42 @@
                </font>
             </Button>
             <TextField fx:id="removeField" layoutX="14.0" layoutY="154.0" />
+            <Label layoutX="25.0" layoutY="123.0" prefHeight="17.0" prefWidth="117.0" text="Name to be delete" textFill="#79088d">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Pane layoutX="427.0" layoutY="37.0" prefHeight="683.0" prefWidth="539.0" style="-fx-background-color: #bbe6fa;">
          <children>
-            <ListView fx:id="movieListView" layoutX="28.0" layoutY="53.0" prefHeight="577.0" prefWidth="476.0" />
+            <ListView fx:id="movieListView" layoutX="28.0" layoutY="137.0" prefHeight="493.0" prefWidth="476.0" />
             <Button fx:id="refreshButton" layoutX="410.0" layoutY="644.0" mnemonicParsing="false" onAction="#refreshList" prefHeight="25.0" prefWidth="81.0" text="Refresh" textFill="#722fbf">
                <font>
                   <Font name="System Italic" size="12.0" />
                </font>
             </Button>
-            <Label layoutX="243.0" layoutY="11.0" text="List of movies">
+            <Label layoutX="219.0" layoutY="106.0" text="List of movies">
                <font>
-                  <Font name="System Bold" size="21.0" />
+                  <Font name="System Italic" size="16.0" />
                </font>
             </Label>
-         </children>
+            <ImageView fitHeight="104.0" fitWidth="136.0" layoutX="410.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imagesView/Movie1.JPG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="87.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imagesView/Movie2.JPG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="87.0" fitWidth="118.0" layoutX="401.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/ImageView/Movie2.JPG" />
+               </image>
+            </ImageView>
+           </children>
       </Pane>
       <Pane layoutX="23.0" layoutY="126.0" prefHeight="322.0" prefWidth="395.0" style="-fx-background-color: #bbe6fa;">
          <children>

@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -10,35 +12,51 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="581.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.AddDeleteActor">
    <children>
-      <Pane layoutX="22.0" layoutY="29.0" prefHeight="201.0" prefWidth="535.0" style="-fx-background-color: #bbe6fa;">
+      <Pane layoutX="22.0" layoutY="29.0" prefHeight="273.0" prefWidth="535.0" style="-fx-background-color: #bbe6fa;">
          <children>
-            <TextField fx:id="nameField" layoutX="133.0" layoutY="71.0" prefHeight="25.0" prefWidth="256.0" />
-            <Text layoutX="25.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actor name">
+            <TextField fx:id="nameField" layoutX="133.0" layoutY="92.0" prefHeight="25.0" prefWidth="256.0" />
+            <Text layoutX="45.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font></Text>
-            <Text layoutX="30.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rolle">
+            <Text layoutX="48.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rolle">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font></Text>
-            <TextField fx:id="rolesField" layoutX="136.0" layoutY="117.0" prefHeight="25.0" prefWidth="256.0" />
-            <Button fx:id="addNewActorButton" layoutX="192.0" layoutY="151.0" mnemonicParsing="false" onAction="#addNewActor" prefHeight="25.0" prefWidth="114.0" text="Add actor" />
+            <TextField fx:id="rolesField" layoutX="133.0" layoutY="182.0" prefHeight="25.0" prefWidth="256.0" />
+            <Button fx:id="addNewActorButton" layoutX="211.0" layoutY="221.0" mnemonicParsing="false" onAction="#addNewActor" prefHeight="25.0" prefWidth="114.0" text="Add actor" />
             <Label layoutX="195.0" layoutY="21.0" text="Add new actor" textFill="#1b1d1e">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
+            <ImageView fitHeight="74.0" fitWidth="97.0" layoutX="448.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imagesView/Movie2.JPG" />
+               </image>
+            </ImageView>
+            <Label layoutX="45.0" layoutY="137.0" text="FirstName">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameFirstField" layoutX="137.0" layoutY="135.0" prefHeight="25.0" prefWidth="249.0" />
+            <ImageView fitHeight="81.0" fitWidth="97.0" layoutX="436.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/ImageView/Movie2.JPG" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
-      <Pane layoutX="22.0" layoutY="239.0" prefHeight="201.0" prefWidth="535.0" style="-fx-background-color: #bbe6fa;">
+      <Pane layoutX="22.0" layoutY="318.0" prefHeight="121.0" prefWidth="535.0" style="-fx-background-color: #bbe6fa;">
          <children>
-            <TextField fx:id="deleteActorField" layoutX="129.0" layoutY="80.0" prefHeight="25.0" prefWidth="263.0" />
-            <Label layoutX="20.0" layoutY="82.0" text="Actor Name">
+            <TextField fx:id="deleteActorField" layoutX="137.0" layoutY="48.0" prefHeight="25.0" prefWidth="263.0" />
+            <Label layoutX="30.0" layoutY="50.0" text="Actor Name">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font></Label>
-            <Button fx:id="deleteActorButton" layoutX="211.0" layoutY="144.0" mnemonicParsing="false" onAction="#deleteActor" prefHeight="25.0" prefWidth="114.0" text="Delete" />
-            <Label layoutX="211.0" layoutY="27.0" text="Delete actor">
+            <Button fx:id="deleteActorButton" layoutX="203.0" layoutY="82.0" mnemonicParsing="false" onAction="#deleteActor" prefHeight="25.0" prefWidth="114.0" text="Delete" />
+            <Label layoutX="211.0" layoutY="8.0" text="Delete actor">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>

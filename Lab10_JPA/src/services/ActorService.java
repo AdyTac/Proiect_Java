@@ -3,8 +3,8 @@ package services;
 import java.util.List;
 import javax.persistence.Persistence;
 import dao.ActorDao;
-import model.Actors;
-import model.KinfOfMovie;
+import model.Actor;
+
 
 
 
@@ -19,26 +19,26 @@ public class ActorService {
 		}
 	}
 
-	public void addUser(Actors newUser) {
+	public void addUser(Actor newUser) {
 		actorDao.create(newUser);
 	}
 
-	public void updateUser(Actors updatedUser) {
+	public void updateUser(Actor updatedUser) {
 		actorDao.update(updatedUser);
 	}
 	
-	public void remove(Actors user, int Id) {
+	public void remove(Actor user, int Id) {
 		actorDao.remove(user, Id);
 	}
 
 
-	public List<Actors> getAllUsers() {
+	public List<Actor> getAllUsers() {
 		return actorDao.findAll();
 	}
-	public Actors findType(String type)throws Exception 
+	public Actor findType(String type)throws Exception 
 	{
-		List<Actors> type_of = actorDao.find(type);
-		Actors u = type_of.get(0);
+		List<Actor> type_of = actorDao.find(type);
+		Actor u = type_of.get(0);
 		int idKindOf= u.getIdActor();
 		System.out.println(idKindOf);
 		//actorDao.remove(u,idKindOf );

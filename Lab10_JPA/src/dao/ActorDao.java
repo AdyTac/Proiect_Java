@@ -12,15 +12,15 @@ import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Root;
 
 
-import model.Actors;
+import model.Actor;
 
 
-public class ActorDao extends Dao<Actors> {
+public class ActorDao extends Dao<Actor> {
 
 		private EntityManagerFactory factory;
 
 	public ActorDao(EntityManagerFactory factory) {
-		super(Actors.class);
+		super(Actor.class);
 		this.factory = factory;
 	}
 
@@ -34,18 +34,18 @@ public class ActorDao extends Dao<Actors> {
 		}
 	}
 	
-	public List<Actors> find(String name) {
+	public List<Actor> find(String name) {
 		EntityManager em = getEntityManager();
 		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Actors> q = cb.createQuery(Actors.class);
+		CriteriaQuery<Actor> q = cb.createQuery(Actor.class);
 
-		Root<Actors> c = q.from(Actors.class);
+		Root<Actor> c = q.from(Actor.class);
 		ParameterExpression<String> paramName = cb.parameter(String.class);
 		q.select(c).where(cb.equal(c.get("aName"), paramName));
-		TypedQuery<Actors> query = em.createQuery(q);
+		TypedQuery<Actor> query = em.createQuery(q);
 		query.setParameter(paramName, name);
 
-		List<Actors> results = query.getResultList();
+		List<Actor> results = query.getResultList();
 		return results;
 
 	}
