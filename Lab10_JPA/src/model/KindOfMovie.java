@@ -40,4 +40,10 @@ public class KindOfMovie implements Serializable {
 		this.type_of = type_of;
 	}
 
+	@Override
+	public String toString() {
+		return " " + idKind + ", - " + type_of + " ";
+	}
+	
+
 }

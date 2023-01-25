@@ -11,12 +11,12 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="610.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.AddDeleteMovie">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="610.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddDeleteMovie">
    <children>
       <Pane layoutX="36.0" layoutY="33.0" prefHeight="534.0" prefWidth="541.0" style="-fx-background-color: #bbe6fa;">
          <children>
             <TextField fx:id="movieNameField" layoutX="181.0" layoutY="100.0" prefHeight="25.0" prefWidth="257.0" />
-            <TextField fx:id="lengthMovieField" layoutX="182.0" layoutY="294.0" prefHeight="25.0" prefWidth="257.0" />
+            <TextField fx:id="runTimeField" layoutX="182.0" layoutY="294.0" prefHeight="25.0" prefWidth="257.0" />
             <Label layoutX="56.0" layoutY="104.0" text="Title">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -27,7 +27,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="54.0" layoutY="298.0" text="Movie length">
+            <Label layoutX="54.0" layoutY="298.0" text="Runtime">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -60,14 +60,14 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField layoutX="182.0" layoutY="253.0" prefHeight="25.0" prefWidth="257.0" />
+            <TextField fx:id="ratingField" layoutX="182.0" layoutY="253.0" prefHeight="25.0" prefWidth="257.0" />
             <Label layoutX="55.0" layoutY="341.0" text="OverView">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
             <TextArea layoutX="181.0" layoutY="330.0" prefHeight="129.0" prefWidth="257.0" />
-            <DatePicker layoutX="184.0" layoutY="213.0" prefHeight="28.0" prefWidth="257.0" />
+            <DatePicker fx:id="myDatePicker" layoutX="184.0" layoutY="213.0" onAction="#addNewMovie" prefHeight="28.0" prefWidth="257.0" />
          </children>
       </Pane>
       <Pane layoutX="36.0" layoutY="721.0" prefHeight="143.0" prefWidth="541.0" style="-fx-background-color: #bbe6fa;">

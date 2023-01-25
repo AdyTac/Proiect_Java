@@ -85,6 +85,7 @@ try {
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Actor add/delete");
+			stage.setResizable(false);
 			stage.setScene(new Scene(root));
 			stage.show();
 		} catch (IOException e) {
@@ -120,6 +121,7 @@ try {
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Add new movie");
+			stage.setResizable(false);
 			stage.setScene(new Scene(root));
 			stage.show();
 			
@@ -138,6 +140,7 @@ try {
 				Parent root = (Parent) fxmlLoader.load();
 				Stage stage = new Stage();
 				stage.setTitle("Delete movie");
+				stage.setResizable(false);
 				stage.setScene(new Scene(root));
 				stage.show();
 				
@@ -155,6 +158,7 @@ try {
 			Stage stage = new Stage();
 			stage.setTitle("Add new director and scenarist");
 			stage.setScene(new Scene(root));
+			stage.setResizable(false);
 			stage.show();
 		
 		}catch (IOException e) {
@@ -178,6 +182,28 @@ try {
 		removeField.setText(" ");
 		
 	}
+	@FXML
+	private void editUserList(ActionEvent e6)
+	{
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resourceView/EditUserAccess.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setTitle("Modifi the users");
+			stage.setScene(new Scene(root));
+			stage.setResizable(false);
+			stage.show();
+		
+		}catch (IOException e) {
+			e.printStackTrace();
+			showAlert();
+		}
+		
+		
+	}
+	
+	
+	
 	private void showAlert() {
 		Alert alert = new Alert(AlertType.WARNING);
 		alert.setTitle("Warning alert");

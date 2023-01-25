@@ -56,6 +56,7 @@ public class UserController {
 			Stage stage = new Stage();
 			stage.setTitle("Register new user for access");
 			stage.setScene(new Scene(root));
+			stage.setResizable(false);
 			stage.show();
 			
 		} catch (IOException e) {
@@ -100,6 +101,7 @@ public class UserController {
 			Stage stage = new Stage();
 			stage.setTitle("Main Menu");
 			stage.setScene(new Scene(root));
+			stage.setResizable(false);
 			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();

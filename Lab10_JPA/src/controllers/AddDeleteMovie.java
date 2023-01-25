@@ -3,10 +3,13 @@ package controllers;
 
 
 
+import java.time.LocalDate;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import model.MovieProduction;
@@ -24,13 +27,16 @@ public class AddDeleteMovie {
 	@FXML
 	private TextField homePageField;
 	@FXML
-	private TextField yearNameField;
+	private TextField ratingField;
 	@FXML
-	private TextField lengthMovieField;
+	private TextField runTimeField;
 	@FXML
 	private Button deleteMovieButton;
 	@FXML
 	private TextField deleteMovieField;
+	 @FXML
+	private DatePicker myDatePicker;
+
 	
 	@FXML
 	private void addNewMovie(ActionEvent e1)
@@ -38,9 +44,15 @@ public class AddDeleteMovie {
 		AddMovieService newMovie=new AddMovieService();
 		MovieProduction newMovi1=new MovieProduction();
 		
-		String movieName=movieNameField.getText();
-		String yearMovie=yearNameField.getText();
-		String lengthMovie=lengthMovieField.getText();
+		String title=movieNameField.getText();
+		String buget=bugetTextField.getText();
+		int bugget = Integer.parseInt(buget);    //convert string to int 
+		String homePage=homePageField.getText();
+		LocalDate myDate = myDatePicker.getValue();
+		String rating =ratingField.getText();
+		int ratting= Integer.parseInt(rating); 
+		String runTime=runTimeField.getText();
+		int runttime =Integer.parseInt(runTime);
 		
 		/*	
 		newMovi1.setYear(yearMovie);
@@ -52,8 +64,12 @@ public class AddDeleteMovie {
 		newMovie.addUser(newMovi1);
 		System.out.println("The new Movie is saved!");
 		movieNameField.setText("");
-		yearNameField.setText("");
-		lengthMovieField.setText("");
+		bugetTextField.setText(" ");
+		homePageField.setText(" ");
+		ratingField.setText(" ");
+		runTimeField.setText(" ");
+		
+		runTimeField.setText("");
 		
 		} catch (Exception e) {
 		    e.printStackTrace();

@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 
 
 import dao.UserDao;
+import model.KindOfMovie;
 import model.LoginUser;
 
 public class UserServices {
@@ -50,6 +51,24 @@ public class UserServices {
 			if (pass.compareTo(u.getPassword()) != 0) {
 				throw new Exception("Password does not match");
 			}
+			return u;
+		}
+		public LoginUser findType(String type)throws Exception 
+		{
+			List<LoginUser> userSearch=userDao.find(type);
+			LoginUser u = userSearch.get(0);
+			int idKindOf= u.getIdUser();
+			System.out.println(idKindOf);
+		//	movieDao.remove(u,idKindOf );
+			return u;
+		}
+		public LoginUser findDelete(String type)throws Exception 
+		{
+			List<LoginUser> userSearch=userDao.find(type);
+			LoginUser u = userSearch.get(0);
+			int idKindOf= u.getIdUser();
+			System.out.println(idKindOf);
+			userDao.remove(u,idKindOf );
 			return u;
 		}
 
