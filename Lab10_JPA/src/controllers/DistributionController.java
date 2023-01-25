@@ -6,9 +6,11 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import model.Distribution;
 import services.DistributionService;
 
@@ -56,6 +58,13 @@ public class DistributionController {
 	private void deleteMovie(ActionEvent e2)
 	{
 				
+	}
+	private void showAlert() {
+		Alert alert = new Alert(AlertType.WARNING);
+		alert.setTitle("Warning alert");
+		alert.setHeaderText("Invalin input !");
+		alert.setContentText("Please write a name in the textBox !");
+		alert.showAndWait();
 	}
 	
 

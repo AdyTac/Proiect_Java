@@ -106,13 +106,19 @@ public class UserController {
 		}
 		} catch (Exception e) {
 			System.out.println("Wrong user or password");
+			showAlert();
 			
 			e.printStackTrace();
 		}
-		/*
-		*/
+		
 	}
-
+	private void showAlert() {
+		Alert alert = new Alert(AlertType.WARNING);
+		alert.setTitle("Warning alert");
+		alert.setHeaderText("Invalin input !");
+		alert.setContentText("Wrong user or password");
+		alert.showAndWait();
+	}
 	
 	
 	

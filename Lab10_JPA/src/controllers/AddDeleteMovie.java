@@ -5,8 +5,10 @@ package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import model.MovieProduction;
 import services.AddMovieService;
 
@@ -55,6 +57,7 @@ public class AddDeleteMovie {
 		
 		} catch (Exception e) {
 		    e.printStackTrace();
+		    showAlert();
 		}	
 	}
 	@FXML
@@ -69,9 +72,18 @@ public class AddDeleteMovie {
 	 	} catch (Exception e) {
 		
 			e.printStackTrace();
+			showAlert();
 		}
 		deleteMovieField.setText(" ");
 		
+	}
+	
+	private void showAlert() {
+		Alert alert = new Alert(AlertType.WARNING);
+		alert.setTitle("Warning alert");
+		alert.setHeaderText("Invalin input !");
+		alert.setContentText("Please write a name in the textBox !");
+		alert.showAndWait();
 	}
 	
 

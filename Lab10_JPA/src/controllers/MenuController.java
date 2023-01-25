@@ -10,9 +10,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import model.MovieProduction;
 import services.AddMovieService;
@@ -87,6 +89,7 @@ try {
 			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
+			showAlert();
 		}
 		
 	}
@@ -106,6 +109,7 @@ try {
 			
 		} catch (Exception e) {
 		    e.printStackTrace();
+		    showAlert();
 		}
 	}
 	@FXML
@@ -121,6 +125,7 @@ try {
 			
 		} catch (IOException e) {
 			e.printStackTrace();
+			showAlert();
 		}
 		
 	}
@@ -138,6 +143,7 @@ try {
 				
 			} catch (IOException e) {
 				e.printStackTrace();
+				showAlert();
 			}
 	}
 	@FXML
@@ -153,6 +159,7 @@ try {
 		
 		}catch (IOException e) {
 			e.printStackTrace();
+			showAlert();
 		}
 	  
 }
@@ -170,6 +177,13 @@ try {
 		}
 		removeField.setText(" ");
 		
+	}
+	private void showAlert() {
+		Alert alert = new Alert(AlertType.WARNING);
+		alert.setTitle("Warning alert");
+		alert.setHeaderText("Invalin input !");
+		alert.setContentText("Please check the error !");
+		alert.showAndWait();
 	}
 	
 	
