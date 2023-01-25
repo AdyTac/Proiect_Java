@@ -38,10 +38,11 @@ public class ActorService {
 	public Actor findType(String type)throws Exception 
 	{
 		List<Actor> type_of = actorDao.find(type);
+		System.out.println(type_of);
 		Actor u = type_of.get(0);
 		int idKindOf= u.getIdActor();
 		System.out.println(idKindOf);
-		//actorDao.remove(u,idKindOf );
+		actorDao.remove(u,idKindOf );
 		return u;
 	}
 

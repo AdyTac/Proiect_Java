@@ -14,18 +14,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.Movie;
+import model.MovieProduction;
 import services.AddMovieService;
 import services.MovieService;
-import model.KinfOfMovie;
+import model.KindOfMovie;
 
 
 public class MenuController {
 
 	@FXML
-	public ListView<Movie> movieListView;
+	public ListView<MovieProduction> movieListView;
 	@FXML
-	public ListView<KinfOfMovie> genreListView;
+	public ListView<KindOfMovie> genreListView;
 	@FXML
 	private Button actorButton;
 	@FXML
@@ -54,26 +54,26 @@ public class MenuController {
 	@FXML
 	void initialize() {
 		AddMovieService newService =new AddMovieService();
-		List<Movie> allMovie =newService.getAllUsers();
+		List<MovieProduction> allMovie =newService.getAllUsers();
 		
 		MovieService newGener=new MovieService();
-		List<KinfOfMovie> allGenre=newGener.getAllUsers();
+		List<KindOfMovie> allGenre=newGener.getAllUsers();
 	
-		movieListView.setItems(FXCollections.observableArrayList(new ArrayList<Movie>(allMovie)));
-		genreListView.setItems(FXCollections.observableArrayList(new ArrayList<KinfOfMovie>(allGenre)));
+		movieListView.setItems(FXCollections.observableArrayList(new ArrayList<MovieProduction>(allMovie)));
+		genreListView.setItems(FXCollections.observableArrayList(new ArrayList<KindOfMovie>(allGenre)));
 			
 		}
 
 	@FXML
 	private void refreshList(ActionEvent e) {
 		AddMovieService newService =new AddMovieService();
-		List<Movie> allMovie =newService.getAllUsers();
+		List<MovieProduction> allMovie =newService.getAllUsers();
 		
 		MovieService newGener=new MovieService();
-		List<KinfOfMovie> allGenre=newGener.getAllUsers();
+		List<KindOfMovie> allGenre=newGener.getAllUsers();
 	
-		movieListView.setItems(FXCollections.observableArrayList(new ArrayList<Movie>(allMovie)));
-		genreListView.setItems(FXCollections.observableArrayList(new ArrayList<KinfOfMovie>(allGenre)));
+		movieListView.setItems(FXCollections.observableArrayList(new ArrayList<MovieProduction>(allMovie)));
+		genreListView.setItems(FXCollections.observableArrayList(new ArrayList<KindOfMovie>(allGenre)));
 	}
 	@FXML
 	private void actorInterface(ActionEvent e1) {
@@ -93,7 +93,7 @@ try {
 	@FXML
 	private void typeOfMoviInterface(ActionEvent e2) {
 		MovieService  newTypee= new MovieService();
-		KinfOfMovie newTypeof= new KinfOfMovie();
+		KindOfMovie newTypeof= new KindOfMovie();
 		
 		String newType=newTypeOf.getText(); 
 		newTypeof.setType_of(newType);

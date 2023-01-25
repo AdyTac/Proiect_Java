@@ -3,8 +3,7 @@ package services;
 import java.util.List;
 import javax.persistence.Persistence;
 import dao.AddMovieDao;
-import model.KinfOfMovie;
-import model.Movie;
+import model.MovieProduction;
 
 public class AddMovieService {
 
@@ -19,27 +18,27 @@ public class AddMovieService {
 		}
 	}
 
-	public void addUser(Movie newUser) {
+	public void addUser(MovieProduction newUser) {
 		addMovieDao.create(newUser);
 	}
 
-	public void updateUser(Movie updatedUser) {
+	public void updateUser(MovieProduction updatedUser) {
 		addMovieDao.update(updatedUser);
 	}
 	
-	public void remove(Movie user, int Id) {
+	public void remove(MovieProduction user, int Id) {
 		addMovieDao.remove(user, Id);
 	}
 
-	public List<Movie> getAllUsers() {
+	public List<MovieProduction> getAllUsers() {
 		return addMovieDao.findAll();
 	}
 	
-	public Movie findType(String type)throws Exception 
+	public MovieProduction findType(String type)throws Exception 
 	{
-		List<Movie> type_of = addMovieDao.find(type);
-		Movie u = type_of.get(0);
-		int idMovie= u.getIdMovie();
+		List<MovieProduction> type_of = addMovieDao.find(type);
+		MovieProduction u = type_of.get(0);
+		int idMovie= u.getMovieId();
 		System.out.println(idMovie);
 		//addMovieDao.remove(u,idMovie );
 		return u;

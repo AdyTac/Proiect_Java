@@ -9,16 +9,14 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Root;
+import model.MovieProduction;
 
-import model.Distribution;
-import model.Movie;
-
-public class AddMovieDao extends Dao<Movie> {
+public class AddMovieDao extends Dao<MovieProduction> {
 
 		private EntityManagerFactory factory;
 
 	public AddMovieDao(EntityManagerFactory factory) {
-		super(Movie.class);
+		super(MovieProduction.class);
 		this.factory = factory;
 	}
 
@@ -31,20 +29,20 @@ public class AddMovieDao extends Dao<Movie> {
 			return null;
 		}
 	}
-	public List<Movie> find(String name) {
+	public List<MovieProduction> find(String name) {
 		EntityManager em = getEntityManager();
 		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Movie> cr = cb.createQuery(Movie.class);
+		CriteriaQuery<MovieProduction> cr = cb.createQuery(MovieProduction.class);
 		
-		Root<Movie> root = cr.from(Movie.class);
+		Root<MovieProduction> root = cr.from(MovieProduction.class);
 		
 		ParameterExpression<String> paramName = cb.parameter(String.class);
 	//	cr.select(root).where(cb.like(root.get("type_of"), name));
 		cr.select(root).where(cb.like(root.get("movieName"), paramName));
-		TypedQuery<Movie> query = em.createQuery(cr);
+		TypedQuery<MovieProduction> query = em.createQuery(cr);
 		query.setParameter(paramName, name);
 		
-		List<Movie> results = query.getResultList();
+		List<MovieProduction> results = query.getResultList();
 		return results;
 	}
 

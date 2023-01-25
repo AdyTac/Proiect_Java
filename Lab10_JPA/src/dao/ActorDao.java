@@ -41,7 +41,7 @@ public class ActorDao extends Dao<Actor> {
 
 		Root<Actor> c = q.from(Actor.class);
 		ParameterExpression<String> paramName = cb.parameter(String.class);
-		q.select(c).where(cb.equal(c.get("aName"), paramName));
+		q.select(c).where(cb.equal(c.get("actorName"), paramName));
 		TypedQuery<Actor> query = em.createQuery(q);
 		query.setParameter(paramName, name);
 

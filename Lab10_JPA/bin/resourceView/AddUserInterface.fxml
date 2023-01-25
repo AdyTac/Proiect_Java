@@ -9,19 +9,19 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="328.0" prefWidth="539.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.UserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="543.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.UserController">
    <children>
-      <Pane layoutX="16.0" layoutY="87.0" prefHeight="220.0" prefWidth="507.0" style="-fx-background-color: #bbe6fa;">
+      <Pane layoutX="18.0" layoutY="91.0" prefHeight="220.0" prefWidth="507.0" style="-fx-background-color: #bbe6fa;">
          <children>
-            <TextField fx:id="registerUserField" layoutX="170.0" layoutY="66.0" prefHeight="25.0" prefWidth="260.0" />
-            <TextField fx:id="registerPasswField" layoutX="170.0" layoutY="110.0" prefHeight="25.0" prefWidth="260.0" />
+            <TextField fx:id="registerUserField" layoutX="158.0" layoutY="54.0" prefHeight="25.0" prefWidth="260.0" />
+            <TextField fx:id="registerPasswField" layoutX="158.0" layoutY="98.0" prefHeight="25.0" prefWidth="260.0" />
             <Button fx:id="addNewUser" layoutX="220.0" layoutY="168.0" mnemonicParsing="false" onAction="#addNewUserU" prefHeight="25.0" prefWidth="100.0" text="Register" />
-            <Label layoutX="57.0" layoutY="109.0" text="Password">
+            <Label layoutX="56.0" layoutY="98.0" text="Password">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="57.0" layoutY="66.0" text="User">
+            <Label layoutX="58.0" layoutY="54.0" text="User">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -40,12 +40,16 @@
                   <Image url="@../../bin/imagesView/NewUser%20Account.JPG" />
                </image>
             </ImageView>
-            <ImageView fitHeight="55.0" fitWidth="200.0" layoutX="143.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="55.0" fitWidth="65.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../bin/imageView/NewUser.JPG" />
                </image>
             </ImageView>
+            <Label layoutX="111.0" layoutY="23.0" text="Register for access database" textFill="#ee0808">
+               <font>
+                  <Font name="Courier New Bold" size="17.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
