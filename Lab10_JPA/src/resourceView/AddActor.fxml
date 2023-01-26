@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="581.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.AddDeleteActor">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="581.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddDeleteActor">
    <children>
       <Pane layoutX="22.0" layoutY="29.0" prefHeight="273.0" prefWidth="535.0" style="-fx-background-color: #bbe6fa;">
          <children>
@@ -35,7 +35,7 @@
                   <Image url="@../../bin/imagesView/Movie2.JPG" />
                </image>
             </ImageView>
-            <Label layoutX="45.0" layoutY="137.0" text="FirstName">
+            <Label layoutX="45.0" layoutY="137.0" text="First Name">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>

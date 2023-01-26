@@ -3,8 +3,8 @@
 	<persistence-unit name="Lab10_JPA">
 		<class>model.LoginUser</class>
 		<class>model.Distribution</class>
-		<class>model.Actor</class>
 		<class>model.KindOfMovie</class>
+		<class>model.Actor</class>
 		<class>model.MovieProduction</class>
 		<properties>
 		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/moviedb_2023"/>

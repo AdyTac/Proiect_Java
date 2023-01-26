@@ -2,7 +2,6 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -25,10 +24,6 @@ public class Actor implements Serializable {
 	private String actorName;
 
 	private String actorRole;
-
-	//bi-directional many-to-one association to MovieProduction
-	@OneToMany(mappedBy="actor")
-	private List<MovieProduction> movieProductions;
 
 	public Actor() {
 	}
@@ -63,28 +58,6 @@ public class Actor implements Serializable {
 
 	public void setActorRole(String actorRole) {
 		this.actorRole = actorRole;
-	}
-
-	public List<MovieProduction> getMovieProductions() {
-		return this.movieProductions;
-	}
-
-	public void setMovieProductions(List<MovieProduction> movieProductions) {
-		this.movieProductions = movieProductions;
-	}
-
-	public MovieProduction addMovieProduction(MovieProduction movieProduction) {
-		getMovieProductions().add(movieProduction);
-		movieProduction.setActor(this);
-
-		return movieProduction;
-	}
-
-	public MovieProduction removeMovieProduction(MovieProduction movieProduction) {
-		getMovieProductions().remove(movieProduction);
-		movieProduction.setActor(null);
-
-		return movieProduction;
 	}
 
 }

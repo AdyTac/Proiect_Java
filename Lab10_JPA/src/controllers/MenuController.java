@@ -55,8 +55,8 @@ public class MenuController {
 
 	@FXML
 	void initialize() {
-		AddMovieService newService =new AddMovieService();
-		List<MovieProduction> allMovie =newService.getAllUsers();
+    	AddMovieService newService =new AddMovieService();
+	  List<MovieProduction> allMovie =newService.getAllUsers();
 		
 		MovieService newGener=new MovieService();
 		List<KindOfMovie> allGenre=newGener.getAllUsers();

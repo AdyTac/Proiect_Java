@@ -20,10 +20,16 @@ public class LoginUser implements Serializable {
 
 	private String password;
 
+
+
 	private String user;
+
+
 
 	public LoginUser() {
 	}
+
+
 
 	public int getIdUser() {
 		return this.idUser;
@@ -37,6 +43,7 @@ public class LoginUser implements Serializable {
 		return this.password;
 	}
 
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -48,12 +55,6 @@ public class LoginUser implements Serializable {
 	public void setUser(String user) {
 		this.user = user;
 	}
-
-	@Override
-	public String toString() {
-		return " " + idUser + ", user: " + user + " - pass : " + password ;
-	}
-	
 
 	
 

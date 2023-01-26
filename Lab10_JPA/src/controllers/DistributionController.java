@@ -47,12 +47,14 @@ public class DistributionController {
 		try {
 			newDistrib.addUser(distrib);
 		System.out.println("The new information are save:"+ directorName + scenarist);
-		directorNameField.setText("");
-		scenaristField.setText("");
+		
 			
 		} catch (Exception e) {
 		    e.printStackTrace();
+		    showAlert();
 		}	
+		directorNameField.setText("");
+		scenaristField.setText("");
 	}
 	@FXML
 	private void deleteMovie(ActionEvent e2)

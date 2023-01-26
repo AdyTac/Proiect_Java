@@ -23,22 +23,16 @@ public class MovieProduction implements Serializable {
 
 	private String homepage;
 
-	@Column(name="id_distribution")
-	private int idDistribution;
-
-	@Column(name="id_kind")
-	private int idKind;
-
-	private int idUser;
+	private int IMDB_rating;
 
 	private String overview;
 
-	private String title;
+	@Column(name="release_date")
+	private String releaseDate;
 
-	//bi-directional many-to-one association to Actor
-	@ManyToOne
-	@JoinColumn(name="id_actor")
-	private Actor actor;
+	private int runtime;
+
+	private String title;
 
 	public MovieProduction() {
 	}
@@ -67,28 +61,12 @@ public class MovieProduction implements Serializable {
 		this.homepage = homepage;
 	}
 
-	public int getIdDistribution() {
-		return this.idDistribution;
+	public int getIMDB_rating() {
+		return this.IMDB_rating;
 	}
 
-	public void setIdDistribution(int idDistribution) {
-		this.idDistribution = idDistribution;
-	}
-
-	public int getIdKind() {
-		return this.idKind;
-	}
-
-	public void setIdKind(int idKind) {
-		this.idKind = idKind;
-	}
-
-	public int getIdUser() {
-		return this.idUser;
-	}
-
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
+	public void setIMDB_rating(int IMDB_rating) {
+		this.IMDB_rating = IMDB_rating;
 	}
 
 	public String getOverview() {
@@ -99,6 +77,22 @@ public class MovieProduction implements Serializable {
 		this.overview = overview;
 	}
 
+	public String getReleaseDate() {
+		return this.releaseDate;
+	}
+
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+
+	public int getRuntime() {
+		return this.runtime;
+	}
+
+	public void setRuntime(int runtime) {
+		this.runtime = runtime;
+	}
+
 	public String getTitle() {
 		return this.title;
 	}
@@ -107,12 +101,13 @@ public class MovieProduction implements Serializable {
 		this.title = title;
 	}
 
-	public Actor getActor() {
-		return this.actor;
+	@Override
+	public String toString() {
+		return "" + title +" " +", " + budget + "," + homepage
+				+ ", IMDB_rating=" + IMDB_rating + ", overview=" + overview + ", releaseDate=" + releaseDate
+				+ ", runtime=" + runtime +  " ";
 	}
-
-	public void setActor(Actor actor) {
-		this.actor = actor;
-	}
+	
+	
 
 }

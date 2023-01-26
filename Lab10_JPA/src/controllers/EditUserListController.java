@@ -50,14 +50,11 @@ public class EditUserListController {
 				e.printStackTrace();
 				showAlert();
 			}
-
+		searchUserfield.setText(" ");
 	}
 	@FXML
 	private void updateUser(ActionEvent e2){
-		
-		
-		
-		
+
 	}
 	@FXML
 	private void deletUser(ActionEvent e3){
@@ -73,7 +70,7 @@ public class EditUserListController {
 				e.printStackTrace();
 				showAlert();
 			}
-
+		deletUserfield.setText(" ");
 	}
 	@FXML
 	private void refresList(ActionEvent e4)

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="845.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.DistributionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DistributionController">
    <children>
       <Pane layoutX="14.0" layoutY="14.0" prefHeight="222.0" prefWidth="320.0" style="-fx-background-color: #bbe6fa;">
          <children>
@@ -27,9 +27,9 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <ImageView fitHeight="82.0" fitWidth="92.0" layoutX="14.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="84.0" fitWidth="88.0" layoutX="11.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../bin/imagesView/Movie2.JPG" />
+                  <Image url="@../../bin/imageView/Movie2.JPG" />
                </image>
             </ImageView>
          </children>
