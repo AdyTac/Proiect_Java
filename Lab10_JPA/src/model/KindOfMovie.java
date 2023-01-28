@@ -42,8 +42,10 @@ public class KindOfMovie implements Serializable {
 
 	@Override
 	public String toString() {
-		return " " + idKind + ",  " + type_of + " ";
+		return "KindOfMovie [idKind=" + idKind + ", type_of=" + type_of + "]";
 	}
+
+	
 	
 
 }

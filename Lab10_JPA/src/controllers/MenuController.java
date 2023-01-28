@@ -4,7 +4,14 @@ import java.awt.Label;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +20,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import model.MovieProduction;
@@ -50,20 +60,60 @@ public class MenuController {
 	private TextField timeLabel;
 	@FXML
 	private Label newTime;
-	
+	@FXML
+	private TableView<KindOfMovie>  tabelData;
+	@FXML
+	private TableColumn<KindOfMovie,String> genreID;
+	@FXML
+	private TableColumn<KindOfMovie,String> genreName;
+	 @FXML
+	 private TableView<MovieProduction> movieTable;
+	 @FXML
+	 private TableColumn<MovieProduction,String> title;
+	 @FXML
+	 private TableColumn<MovieProduction, String> IMDB_rating;
+	 @FXML
+	 private TableColumn<MovieProduction, String> budget;
+	 @FXML
+	 private TableColumn<MovieProduction,String> homepage;
+	 @FXML
+	 private TableColumn<MovieProduction, String> movieId;
+	 @FXML
+	 private TableColumn<MovieProduction, String> releaseDate;
+	 @FXML
+	 private TableColumn<MovieProduction, String> runtime;
+
 	
 
+
+	
 	@FXML
 	void initialize() {
     	AddMovieService newService =new AddMovieService();
-	  List<MovieProduction> allMovie =newService.getAllUsers();
+	    List<MovieProduction> allMovie =newService.getAllUsers();
 		
 		MovieService newGener=new MovieService();
 		List<KindOfMovie> allGenre=newGener.getAllUsers();
 	
-		movieListView.setItems(FXCollections.observableArrayList(new ArrayList<MovieProduction>(allMovie)));
-		genreListView.setItems(FXCollections.observableArrayList(new ArrayList<KindOfMovie>(allGenre)));
-			
+		//movieListView.setItems(FXCollections.observableArrayList(new ArrayList<MovieProduction>(allMovie)));
+		//genreListView.setItems(FXCollections.observableArrayList(new ArrayList<KindOfMovie>(allGenre)));
+		
+		ObservableList<MovieProduction> listMovie= FXCollections.observableArrayList(new ArrayList<MovieProduction>(allMovie));
+		movieId.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("movieId"));
+		title.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("title"));
+		budget.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("budget"));
+		homepage.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("homepage"));
+		releaseDate.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("releaseDate"));
+		IMDB_rating.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("IMDB_rating"));
+		runtime.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("runtime"));
+		movieTable.setItems(listMovie);
+		
+		ObservableList<KindOfMovie> list= FXCollections.observableArrayList(new ArrayList<KindOfMovie>(allGenre));
+	    genreID.setCellValueFactory(new PropertyValueFactory<KindOfMovie,String>("idKind"));
+		genreName.setCellValueFactory(new PropertyValueFactory<KindOfMovie,String>("type_of"));
+		tabelData.setItems(list);
+		System.out.println(list);
+	
 		}
 
 	@FXML

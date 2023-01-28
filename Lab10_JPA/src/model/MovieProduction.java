@@ -103,10 +103,12 @@ public class MovieProduction implements Serializable {
 
 	@Override
 	public String toString() {
-		return "" + title +" " +", " + budget + "," + homepage
+		return "MovieProduction [movieId=" + movieId + ", budget=" + budget + ", homepage=" + homepage
 				+ ", IMDB_rating=" + IMDB_rating + ", overview=" + overview + ", releaseDate=" + releaseDate
-				+ ", runtime=" + runtime +  " ";
+				+ ", runtime=" + runtime + ", title=" + title + "]";
 	}
+
+	
 	
 	
 
