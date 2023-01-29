@@ -19,17 +19,9 @@ public class LoginUser implements Serializable {
 	private int idUser;
 
 	private String password;
-
-
-
 	private String user;
-
-
-
 	public LoginUser() {
 	}
-
-
 
 	public int getIdUser() {
 		return this.idUser;
@@ -55,6 +47,13 @@ public class LoginUser implements Serializable {
 	public void setUser(String user) {
 		this.user = user;
 	}
+
+	@Override
+	public String toString() {
+		return "LoginUser [idUser=" + idUser + ", password=" + password + ", user=" + user + "]";
+	}
+	
+	
 
 	
 

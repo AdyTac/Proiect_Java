@@ -4,13 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.cell.PropertyValueFactory;
+import model.KindOfMovie;
 import model.LoginUser;
 import services.UserServices;
 
@@ -27,13 +32,29 @@ public class EditUserListController {
 	private Button refresUserList;
 	@FXML
 	public ListView<LoginUser> userViewList;
+	@FXML
+	private TableView<LoginUser> loginTableUsers;
+	@FXML
+	private TableColumn<LoginUser, String> idUser;
+	@FXML
+	private TableColumn<LoginUser, String> password;
+	@FXML
+	private TableColumn<LoginUser, String> user;
 	
 	@FXML
 	void initialize() {
 		UserServices userService = new UserServices();
 		List<LoginUser> allUsers = userService.getAllUsers();
-		System.out.println(allUsers);
-		userViewList.setItems(FXCollections.observableArrayList(new ArrayList<LoginUser>(allUsers)));
+	//	System.out.println(allUsers);
+	//	userViewList.setItems(FXCollections.observableArrayList(new ArrayList<LoginUser>(allUsers)));
+		
+		ObservableList<LoginUser> listOffusers= FXCollections.observableArrayList(new ArrayList<LoginUser>(allUsers));
+		idUser.setCellValueFactory(new PropertyValueFactory<LoginUser,String>("idUser"));
+		user.setCellValueFactory(new PropertyValueFactory<LoginUser,String>("user"));
+		password.setCellValueFactory(new PropertyValueFactory<LoginUser,String>("password"));
+		loginTableUsers.setItems(listOffusers);
+		System.out.println(listOffusers);
+
 	}
 	@FXML
 	private void searchUser(ActionEvent e1){
@@ -50,7 +71,7 @@ public class EditUserListController {
 				e.printStackTrace();
 				showAlert();
 			}
-		searchUserfield.setText(" ");
+		searchUserfield.clear();
 	}
 	@FXML
 	private void updateUser(ActionEvent e2){

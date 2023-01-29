@@ -119,19 +119,17 @@ public class AddDeleteMovie {
 		    showAlert();
 		}	
 		
-		movieNameField.setText("" );
-		bugetTextField.setText("");
-	    homePageField.setText(" ");
-		ratingField.setText(" ");
-		runTimeField.setText(" ");
-		overViewField.setText(" ");
-		
-		nameField.setText(" ");
-		nameFirstField.setText(" ");
-		rolesField.setText(" ");
-		
-		directorNameField.setText(" ");
-		scenaristField.setText("");
+		movieNameField.clear();
+		bugetTextField.clear();
+	    homePageField.clear();
+		ratingField.clear();
+		runTimeField.clear();
+		overViewField.clear();
+		nameField.clear();
+		nameFirstField.clear();
+		rolesField.clear();
+		directorNameField.clear();
+		scenaristField.clear();
 	}
 	@FXML
 	private void deleteMovie(ActionEvent e2)
