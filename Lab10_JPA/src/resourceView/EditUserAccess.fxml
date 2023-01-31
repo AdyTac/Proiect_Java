@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -11,48 +12,72 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.EditUserListController">
    <children>
-      <Pane layoutX="21.0" layoutY="88.0" prefHeight="205.0" prefWidth="559.0" style="-fx-background-color: #bbe6fa;">
+      <Pane layoutX="13.0" layoutY="59.0" prefHeight="226.0" prefWidth="600.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Label layoutX="79.0" layoutY="74.0" prefHeight="17.0" prefWidth="90.0" text="Update User">
+            <TextField fx:id="nameField" layoutX="173.0" layoutY="51.0" prefHeight="25.0" prefWidth="225.0" />
+            <Button fx:id="addUser" layoutX="437.0" layoutY="55.0" mnemonicParsing="false" onAction="#addNewUser" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #80334d;" text="Add User" textFill="#f5f8f6">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></Button>
+            <Label layoutX="83.0" layoutY="59.0" prefHeight="17.0" prefWidth="90.0" text="Name">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button layoutX="433.0" layoutY="70.0" mnemonicParsing="false" text="Update user" />
-            <TextField fx:id="updateUserfield" layoutX="168.0" layoutY="70.0" prefHeight="25.0" prefWidth="225.0" />
-            <TextField fx:id="deletUserfield" layoutX="168.0" layoutY="117.0" prefHeight="25.0" prefWidth="225.0" />
-            <Button layoutX="433.0" layoutY="117.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Delet User" />
-            <Label layoutX="79.0" layoutY="121.0" text="Delet User">
+            <Label layoutX="83.0" layoutY="88.0" text="Firest Name">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="searchUserfield" layoutX="169.0" layoutY="25.0" prefHeight="25.0" prefWidth="225.0" />
-            <Button fx:id="searchButton" layoutX="433.0" layoutY="25.0" mnemonicParsing="false" onAction="#searchUser" text=" Search user" />
-            <Label layoutX="79.0" layoutY="29.0" prefHeight="17.0" prefWidth="90.0" text="Search user">
+            <Label layoutX="83.0" layoutY="117.0" text="User ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="83.0" layoutY="148.0" text="Password">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="83.0" layoutY="182.0" text="E-mail">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="firstNameField" layoutX="173.0" layoutY="84.0" prefHeight="25.0" prefWidth="225.0" />
+            <TextField fx:id="userField" layoutX="173.0" layoutY="115.0" prefHeight="25.0" prefWidth="225.0" />
+            <TextField fx:id="emailField" layoutX="173.0" layoutY="178.0" prefHeight="25.0" prefWidth="225.0" />
+            <PasswordField fx:id="passwField" layoutX="173.0" layoutY="146.0" prefHeight="25.0" prefWidth="225.0" />
+            <Button fx:id="updateuserButton" layoutX="437.0" layoutY="105.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #80334d;" text="Update" textFill="WHITE" />
+            <Button fx:id="deletButton" layoutX="437.0" layoutY="153.0" mnemonicParsing="false" onAction="#deletUser" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #80334d;" text="Delete" textFill="#f5f2f2" />
+            <TextField fx:id="userID" layoutX="173.0" layoutY="20.0" prefHeight="25.0" prefWidth="225.0" />
+            <Label layoutX="81.0" layoutY="24.0" text="User ID">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="21.0" layoutY="22.0" prefHeight="59.0" prefWidth="559.0" style="-fx-background-color: #bbe6fa;">
+      <Pane layoutX="21.0" layoutY="6.0" prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Label layoutX="74.0" layoutY="8.0" prefHeight="38.0" prefWidth="436.0" text="Manage the users from application" textFill="#87045b">
+            <Label layoutX="76.0" layoutY="7.0" prefHeight="38.0" prefWidth="436.0" text="Manage the users from application" textFill="#80334d">
                <font>
-                  <Font size="25.0" />
+                  <Font name="Bauhaus 93" size="25.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="21.0" layoutY="299.0" prefHeight="275.0" prefWidth="559.0" style="-fx-background-color: #bbe6fa;">
+      <Pane layoutX="13.0" layoutY="291.0" prefHeight="309.0" prefWidth="576.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button fx:id="refreshUserList" layoutX="468.0" layoutY="236.0" mnemonicParsing="false" text="Refresh List" />
-            <TableView fx:id="loginTableUsers" layoutX="84.0" layoutY="14.0" prefHeight="216.0" prefWidth="391.0">
+            <Button fx:id="refreshTableList" layoutX="494.0" layoutY="262.0" mnemonicParsing="false" onAction="#refresList" style="-fx-background-color: #80334d;" text="Refresh List" textFill="#fcfafa" />
+            <TableView fx:id="loginTableUsers" layoutX="30.0" layoutY="14.0" onMouseClicked="#getItem" prefHeight="234.0" prefWidth="541.0">
               <columns>
-                <TableColumn fx:id="idUser" prefWidth="48.0" text="ID" />
-                <TableColumn fx:id="user" prefWidth="167.0" text="User" />
-                  <TableColumn fx:id="password" prefWidth="175.0" text="Password" />
+                <TableColumn fx:id="idUser" prefWidth="43.0" text="Id." />
+                <TableColumn fx:id="name" prefWidth="100.0" text="Name" />
+                  <TableColumn fx:id="firstName" prefWidth="90.0" text="First Name" />
+                  <TableColumn fx:id="user" prefWidth="86.0" text="Users" />
+                  <TableColumn fx:id="password" prefWidth="82.0" text="Passw's" />
+                  <TableColumn fx:id="email" prefWidth="139.0" text="E-mail" />
               </columns>
             </TableView>
          </children>

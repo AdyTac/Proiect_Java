@@ -34,6 +34,9 @@ public class UserServices {
 	public void remove(LoginUser user, int Id) {
 		userDao.remove(user, Id);
 	}
+	public void find(int Id) {
+		userDao.find(Id);
+	}
 
 
 	public List<LoginUser> getAllUsers() {

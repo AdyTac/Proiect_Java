@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="543.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.UserController">
    <children>
-      <Pane layoutX="18.0" layoutY="91.0" prefHeight="220.0" prefWidth="507.0" style="-fx-background-color: #bbe6fa;">
+      <Pane layoutX="18.0" layoutY="91.0" prefHeight="220.0" prefWidth="507.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <TextField fx:id="registerUserField" layoutX="158.0" layoutY="54.0" prefHeight="25.0" prefWidth="260.0" />
             <TextField fx:id="registerPasswField" layoutX="158.0" layoutY="98.0" prefHeight="25.0" prefWidth="260.0" />
@@ -28,7 +28,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="16.0" layoutY="14.0" prefHeight="65.0" prefWidth="507.0" style="-fx-background-color: #bbe6fa;">
+      <Pane layoutX="16.0" layoutY="7.0" prefHeight="80.0" prefWidth="543.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <ImageView fitHeight="55.0" fitWidth="54.0" layoutX="439.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -45,9 +45,9 @@
                   <Image url="@../../bin/imageView/NewUser.JPG" />
                </image>
             </ImageView>
-            <Label layoutX="111.0" layoutY="23.0" text="Register for access database" textFill="#ee0808">
+            <Label layoutX="111.0" layoutY="10.0" prefHeight="33.0" prefWidth="307.0" text="Register for access database" textFill="#80334d">
                <font>
-                  <Font name="Courier New Bold" size="17.0" />
+                  <Font name="Bauhaus 93" size="20.0" />
                </font>
             </Label>
          </children>

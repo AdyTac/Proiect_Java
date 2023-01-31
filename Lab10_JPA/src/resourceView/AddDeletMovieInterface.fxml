@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,9 +12,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="944.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.AddDeleteMovie">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="944.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddDeleteMovie">
    <children>
-      <Pane layoutX="36.0" layoutY="25.0" prefHeight="534.0" prefWidth="878.0" style="-fx-background-color: #bbe6fa;">
+      <Pane layoutX="36.0" layoutY="4.0" prefHeight="555.0" prefWidth="944.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <TextField fx:id="movieNameField" layoutX="181.0" layoutY="100.0" prefHeight="25.0" prefWidth="257.0" />
             <TextField fx:id="runTimeField" layoutX="182.0" layoutY="294.0" prefHeight="25.0" prefWidth="257.0" />
@@ -31,13 +33,13 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="addNewMovieButton" layoutX="468.0" layoutY="473.0" mnemonicParsing="false" onAction="#addNewMovie" prefHeight="25.0" prefWidth="86.0" text="Add Movie" />
-            <Label layoutX="181.0" layoutY="29.0" text="Add new Movie" textFill="#9807f5">
+            <Button fx:id="addNewMovieButton" layoutX="468.0" layoutY="473.0" mnemonicParsing="false" onAction="#addNewMovie" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #80334d;" text="Add Movie" textFill="#fcfafa" />
+            <Label layoutX="109.0" layoutY="14.0" text="Add new Movie" textFill="#80334d">
                <font>
-                  <Font name="System Bold" size="22.0" />
+                  <Font name="Bauhaus 93" size="35.0" />
                </font>
             </Label>
-            <ImageView fitHeight="63.0" fitWidth="72.0" layoutX="459.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="63.0" fitWidth="72.0" layoutX="859.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../bin/ImageView/Movie2.JPG" />
                </image>
@@ -103,33 +105,32 @@
             </Label>
             <TextField fx:id="directorNameField" layoutX="591.0" layoutY="146.0" />
             <TextField fx:id="scenaristField" layoutX="591.0" layoutY="185.0" />
-         </children>
-      </Pane>
-      <Pane layoutX="36.0" layoutY="721.0" prefHeight="143.0" prefWidth="878.0" style="-fx-background-color: #bbe6fa;">
-         <children>
-            <Label layoutX="40.0" layoutY="63.0" text="Movie Name">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Label>
-            <TextField fx:id="deleteMovieField" layoutX="158.0" layoutY="59.0" prefHeight="25.0" prefWidth="330.0" />
-            <Button fx:id="deleteMovieButton" layoutX="306.0" layoutY="98.0" mnemonicParsing="false" onAction="#deleteMovie" text="Delete Movie" />
-            <Label layoutX="234.0" layoutY="14.0" text="Delete Movie">
-               <font>
-                  <Font name="System Bold Italic" size="19.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Pane layoutX="35.0" layoutY="574.0" prefHeight="143.0" prefWidth="878.0" style="-fx-background-color: #bbe6fa;">
-         <children>
-            <Label layoutX="50.0" layoutY="31.0" text="Update Title">
+            <Button layoutX="570.0" layoutY="473.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #80334d;" text="Update Movie" textFill="WHITE" />
+            <Button fx:id="deleteMovieButton" layoutX="697.0" layoutY="472.0" mnemonicParsing="false" onAction="#deleteMovie" style="-fx-background-color: #80334d;" text="Delete Movie" textFill="#fcfafa" />
+            <ImageView fitHeight="63.0" fitWidth="348.0" layoutX="565.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imageView/Movies3.JPG" />
+               </image>
+            </ImageView>
+            <TextField fx:id="idMovieField" layoutX="181.0" layoutY="65.0" />
+            <Label layoutX="58.0" layoutY="69.0" text="Movie ID">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField layoutX="180.0" layoutY="27.0" prefHeight="25.0" prefWidth="268.0" />
-            <Button layoutX="308.0" layoutY="89.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Update" />
          </children>
       </Pane>
+      <TableView fx:id="movieTable" layoutX="36.0" layoutY="571.0" onMouseClicked="#getItem" prefHeight="315.0" prefWidth="944.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="movieId" prefWidth="43.0" text="ID" />
+          <TableColumn fx:id="title" prefWidth="214.0" text="Title" />
+            <TableColumn fx:id="budget" prefWidth="88.0" text="Budget" />
+            <TableColumn fx:id="homepage" prefWidth="93.0" text="HomePage" />
+            <TableColumn fx:id="releaseDate" prefWidth="94.0" text="ReleaseDate" />
+            <TableColumn fx:id="IMDB_rating" prefWidth="85.0" text="Rating" />
+            <TableColumn fx:id="runtime" prefWidth="88.0" text="RunTime" />
+            <TableColumn fx:id="overView" prefWidth="238.0" text="OverView" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

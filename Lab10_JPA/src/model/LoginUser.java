@@ -18,8 +18,16 @@ public class LoginUser implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idUser;
 
+	private String email;
+
+	private String firstname;
+
+	private String name;
+
 	private String password;
+
 	private String user;
+
 	public LoginUser() {
 	}
 
@@ -31,14 +39,39 @@ public class LoginUser implements Serializable {
 		this.idUser = idUser;
 	}
 
+	public String getEmail() {
+		return this.email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getFirstname() {
+		return this.firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getPassword() {
 		return this.password;
 	}
 
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 
 	public String getUser() {
 		return this.user;
@@ -50,11 +83,10 @@ public class LoginUser implements Serializable {
 
 	@Override
 	public String toString() {
-		return "LoginUser [idUser=" + idUser + ", password=" + password + ", user=" + user + "]";
+		return "LoginUser [idUser=" + idUser + ", email=" + email + ", firstname=" + firstname + ", name=" + name
+				+ ", password=" + password + ", user=" + user + "]";
 	}
 	
-	
 
-	
 
 }

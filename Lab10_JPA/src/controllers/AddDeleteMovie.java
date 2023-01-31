@@ -1,25 +1,35 @@
 package controllers;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import model.Actor;
 import model.Distribution;
 import model.KindOfMovie;
+import model.LoginUser;
 import model.MovieProduction;
 import services.ActorService;
 import services.AddMovieService;
 import services.DistributionService;
 import services.MovieService;
+import services.UserServices;
 
 public class AddDeleteMovie {
-
+	@FXML
+	private TextField idMovieField;
 	@FXML
 	private Button addNewMovieButton;
 	@FXML
@@ -52,6 +62,44 @@ public class AddDeleteMovie {
 	private TextField directorNameField;
 	@FXML
 	private TextField scenaristField;
+	 @FXML
+	 private TableView<MovieProduction> movieTable;
+	 @FXML
+	 private TableColumn<MovieProduction,String> title;
+	 @FXML
+	 private TableColumn<MovieProduction, String> IMDB_rating;
+	 @FXML
+	 private TableColumn<MovieProduction, Integer> budget;
+	 @FXML
+	 private TableColumn<MovieProduction,String> homepage;
+	 @FXML
+	 private TableColumn<MovieProduction, Integer> movieId;
+	 @FXML
+	 private TableColumn<MovieProduction, String> releaseDate;
+	 @FXML
+	 private TableColumn<MovieProduction, Integer> runtime;
+	 @FXML
+	 private TableColumn<MovieProduction, String> overView;
+	 Integer index;
+	 @FXML
+	void initialize() {
+			AddMovieService newService =new AddMovieService();
+		    List<MovieProduction> allMovie =newService.getAllUsers();
+			
+			ObservableList<MovieProduction> listMovie= FXCollections.observableArrayList(new ArrayList<MovieProduction>(allMovie)); 
+			movieId.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("movieId"));
+			title.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("title"));
+			budget.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("budget"));
+			homepage.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("homepage"));
+			releaseDate.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("releaseDate"));
+			IMDB_rating.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("IMDB_rating"));
+			runtime.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("runtime"));
+			overView.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("overview"));
+			
+			
+			movieTable.setItems(listMovie);
+		}
+	 
 	@FXML
 	private void addNewMovie(ActionEvent e1)
 	{  
@@ -131,22 +179,38 @@ public class AddDeleteMovie {
 		directorNameField.clear();
 		scenaristField.clear();
 	}
+	 @FXML
+	    void getItem(MouseEvent e) {
+		 index = movieTable.getSelectionModel().getSelectedIndex();
+		 if(index==-1)
+		 {
+			 return;
+		 }
+		 idMovieField.setText(movieId.getCellData(index).toString());
+		 movieNameField.setText(title.getCellData(index).toString());
+		 homePageField.setText(homepage.getCellData(index).toString());
+		 overViewField.setText(overView.getCellData(index).toString());
+		 bugetTextField.setText(budget.getCellData(index).toString());
+		 ratingField.setText(budget.getCellData(index).toString());
+		 runTimeField.setText(runtime.getCellData(index).toString());
+		
+		
+	  }
 	@FXML
 	private void deleteMovie(ActionEvent e2)
 	{
-
-		String remName= deleteMovieField.getText();
-		AddMovieService newObj =new AddMovieService();
+		AddMovieService newMovieServ =new AddMovieService();
+		String idStr =idMovieField.getText();
+		int id = Integer.parseInt(idStr);
+		MovieProduction newMovieProd =new MovieProduction();
 		try {
-		newObj.findType(remName);
-		System.out.println(remName);
-	 	} catch (Exception e) {
-		
-			e.printStackTrace();
-			showAlert();
-		}
-		deleteMovieField.setText(" ");
-		
+			newMovieServ.remove(newMovieProd, id);
+			} catch (Exception e) {
+			
+				e.printStackTrace();
+				showAlert();
+			}
+				
 	}
 	
 	private void showAlert() {

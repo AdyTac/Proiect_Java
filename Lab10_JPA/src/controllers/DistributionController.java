@@ -2,7 +2,6 @@ package controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,8 +14,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import model.Distribution;
-import model.KindOfMovie;
 import services.DistributionService;
 
 public class DistributionController {
@@ -29,26 +28,33 @@ public class DistributionController {
 	@FXML
 	private TextField scenaristField;
 	@FXML
+    private TextField idField;
+	@FXML
+    private Button deleteButton;
+	@FXML
+    private Button updateButton;
+	@FXML
     private TableView<Distribution> tableDirectorWriter;
 	@FXML
 	private TableColumn<Distribution, String> director;
 	@FXML
-	private TableColumn<Distribution, String> idDistribution;
+	private TableColumn<Distribution, Integer> idDistribution;
 	@FXML
 	private TableColumn<Distribution, String> scenario;
+	Integer index;
 	@FXML
 	void initialize() {
 		DistributionService  newDistrib=new DistributionService();
 		List<Distribution> allDistrib = newDistrib.getAllUsers();
-		System.out.println(allDistrib);
-	//	distributionList.setItems(FXCollections.observableArrayList(new ArrayList<Distribution>(allDistrib)));   //modificat din listView in tableView 
-		
+		//System.out.println(allDistrib);
+			
 		ObservableList<Distribution> listDistribution= FXCollections.observableArrayList(new ArrayList<Distribution>(allDistrib));
-		idDistribution.setCellValueFactory(new PropertyValueFactory<Distribution,String>("idDistribution"));
+		idDistribution.setCellValueFactory(new PropertyValueFactory<Distribution,Integer>("idDistribution"));
 		director.setCellValueFactory(new PropertyValueFactory<Distribution,String>("director"));
 		scenario.setCellValueFactory(new PropertyValueFactory<Distribution,String>("scenario"));
+		
 		tableDirectorWriter.setItems(listDistribution);
-		System.out.println(listDistribution);
+		//System.out.println(listDistribution);
 	}
 	
 	@FXML
@@ -73,11 +79,38 @@ public class DistributionController {
 		}	
 		directorNameField.clear();
 		scenaristField.clear();
+		idField.clear();
 	}
+	 @FXML
+	    void getItem(MouseEvent e) {
+		 index = tableDirectorWriter.getSelectionModel().getSelectedIndex();
+		 if(index==-1)
+		 {
+			 return;
+		 }
+		 idField.setText(idDistribution.getCellData(index).toString());
+		 directorNameField.setText(director.getCellData(index).toString());
+		 scenaristField.setText(scenario.getCellData(index).toString());
+		
+		
+	  }
 	@FXML
 	private void deletDistribution(ActionEvent e2)
 	{
-				
+		DistributionService  newDistriib=new DistributionService();
+		String idStr =idField.getText();
+		int id = Integer.parseInt(idStr);
+		Distribution distribb=new Distribution();
+		try {
+			newDistriib.remove(distribb, id);
+			} catch (Exception e) {
+			
+				e.printStackTrace();
+				showAlert();
+			}	
+		directorNameField.clear();
+		scenaristField.clear();
+		idField.clear();
 	}
 	private void showAlert() {
 		Alert alert = new Alert(AlertType.WARNING);
@@ -85,6 +118,20 @@ public class DistributionController {
 		alert.setHeaderText("Invalin input !");
 		alert.setContentText("Please write a name in the textBox !");
 		alert.showAndWait();
+	}
+	@FXML
+	private void refreshList(ActionEvent e)
+	{
+		DistributionService  newDistrib=new DistributionService();
+		List<Distribution> allDistrib = newDistrib.getAllUsers();
+		//System.out.println(allDistrib);
+			
+		ObservableList<Distribution> listDistribution= FXCollections.observableArrayList(new ArrayList<Distribution>(allDistrib));
+		idDistribution.setCellValueFactory(new PropertyValueFactory<Distribution,Integer>("idDistribution"));
+		director.setCellValueFactory(new PropertyValueFactory<Distribution,String>("director"));
+		scenario.setCellValueFactory(new PropertyValueFactory<Distribution,String>("scenario"));
+		
+		tableDirectorWriter.setItems(listDistribution);
 	}
 	
 

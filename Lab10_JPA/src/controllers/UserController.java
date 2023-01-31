@@ -77,12 +77,13 @@ public class UserController {
 		try {
 			userService.addUser(new1);
 			System.out.println("The Information are saved !");
-			registerUserField.setText("");
-			registerPasswField.setText("");
+			
 			
 			} catch (Exception e) {
 			e.printStackTrace();
 			}
+		registerUserField.clear();
+		registerPasswField.clear();
 	}
 	@FXML
 	private void LoginToApplication(ActionEvent event) {
