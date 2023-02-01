@@ -4,6 +4,7 @@ import java.util.List;
 import javax.persistence.Persistence;
 import dao.MovieDao;
 import model.KindOfMovie;
+import model.LoginUser;
 
 public class MovieService {
 	private MovieDao movieDao;
@@ -31,6 +32,9 @@ public class MovieService {
 
 	public List<KindOfMovie> getAllUsers() {
 		return movieDao.findAll();
+	}
+	public KindOfMovie find(int id) {
+		return  movieDao.find(id);
 	}
 	
 	public KindOfMovie findType(String type)throws Exception 

@@ -14,106 +14,85 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="944.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.AddDeleteMovie">
    <children>
-      <Pane layoutX="36.0" layoutY="4.0" prefHeight="555.0" prefWidth="944.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Pane layoutX="36.0" layoutY="4.0" prefHeight="391.0" prefWidth="944.0" style="-fx-background-color: #108d59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <TextField fx:id="movieNameField" layoutX="181.0" layoutY="100.0" prefHeight="25.0" prefWidth="257.0" />
             <TextField fx:id="runTimeField" layoutX="182.0" layoutY="294.0" prefHeight="25.0" prefWidth="257.0" />
-            <Label layoutX="56.0" layoutY="104.0" text="Title">
+            <Label layoutX="105.0" layoutY="104.0" text="Title" textFill="#fffbfb">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="56.0" layoutY="221.0" text="Release Date">
+            <Label layoutX="84.0" layoutY="223.0" text="Release Date" textFill="#fffbfb">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="54.0" layoutY="298.0" text="Runtime">
+            <Label layoutX="85.0" layoutY="298.0" text="Runtime" textFill="#fffbfb">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="addNewMovieButton" layoutX="468.0" layoutY="473.0" mnemonicParsing="false" onAction="#addNewMovie" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #80334d;" text="Add Movie" textFill="#fcfafa" />
             <Label layoutX="109.0" layoutY="14.0" text="Add new Movie" textFill="#80334d">
                <font>
                   <Font name="Bauhaus 93" size="35.0" />
                </font>
             </Label>
-            <ImageView fitHeight="63.0" fitWidth="72.0" layoutX="859.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="63.0" fitWidth="72.0" layoutX="853.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../bin/ImageView/Movie2.JPG" />
                </image>
             </ImageView>
-            <Label layoutX="56.0" layoutY="141.0" text="Buget">
+            <Label layoutX="101.0" layoutY="142.0" text="Buget" textFill="#fffbfb">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
             <TextField fx:id="bugetTextField" layoutX="181.0" layoutY="137.0" prefHeight="25.0" prefWidth="257.0" />
             <TextField fx:id="homePageField" layoutX="181.0" layoutY="176.0" prefHeight="25.0" prefWidth="257.0" />
-            <Label layoutX="56.0" layoutY="180.0" text="HomePage">
+            <Label layoutX="85.0" layoutY="180.0" text="HomePage" textFill="#fffbfb">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="56.0" layoutY="257.0" text="IMDB rating">
+            <Label layoutX="85.0" layoutY="257.0" text="IMDB rating" textFill="#fffbfb">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
             <TextField fx:id="ratingField" layoutX="182.0" layoutY="253.0" prefHeight="25.0" prefWidth="257.0" />
-            <Label layoutX="55.0" layoutY="341.0" text="OverView">
+            <Label layoutX="84.0" layoutY="341.0" text="OverView" textFill="#fffbfb">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
             <DatePicker fx:id="myDatePicker" layoutX="184.0" layoutY="213.0" prefHeight="28.0" prefWidth="257.0" />
             <TextField fx:id="overViewField" layoutX="182.0" layoutY="337.0" prefHeight="25.0" prefWidth="257.0" />
-            <Label layoutX="25.0" layoutY="380.0" text="Actor Name">
+            <Label layoutX="521.0" layoutY="150.0" text="Genre" textFill="#fffbfb">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="281.0" layoutY="380.0" text="First Name">
-               <font>
-                  <Font name="System Bold" size="11.0" />
-               </font>
-            </Label>
-            <TextField fx:id="nameField" layoutX="118.0" layoutY="376.0" />
-            <TextField fx:id="nameFirstField" layoutX="367.0" layoutY="376.0" />
-            <Label layoutX="26.0" layoutY="421.0" text="Actor Role">
+            <TextField fx:id="newTypeOf" layoutX="593.0" layoutY="146.0" />
+            <Label layoutX="516.0" layoutY="196.0" text="Director" textFill="#fffbfb">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="rolesField" layoutX="118.0" layoutY="418.0" />
-            <Label layoutX="519.0" layoutY="104.0" text="Genre">
+            <Label layoutX="519.0" layoutY="239.0" text="Writers" textFill="#fffbfb">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="newTypeOf" layoutX="591.0" layoutY="100.0" />
-            <Label layoutX="514.0" layoutY="150.0" text="Director">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="517.0" layoutY="193.0" text="Writers">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="directorNameField" layoutX="591.0" layoutY="146.0" />
-            <TextField fx:id="scenaristField" layoutX="591.0" layoutY="185.0" />
-            <Button layoutX="570.0" layoutY="473.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #80334d;" text="Update Movie" textFill="WHITE" />
-            <Button fx:id="deleteMovieButton" layoutX="697.0" layoutY="472.0" mnemonicParsing="false" onAction="#deleteMovie" style="-fx-background-color: #80334d;" text="Delete Movie" textFill="#fcfafa" />
-            <ImageView fitHeight="63.0" fitWidth="348.0" layoutX="565.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <TextField fx:id="directorNameField" layoutX="593.0" layoutY="192.0" />
+            <TextField fx:id="scenaristField" layoutX="593.0" layoutY="231.0" />
+            <ImageView fitHeight="117.0" fitWidth="269.0" layoutX="497.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../bin/imageView/Movies3.JPG" />
+                  <Image url="@../../bin/imageView/MovieBanner.JPG" />
                </image>
             </ImageView>
-            <TextField fx:id="idMovieField" layoutX="181.0" layoutY="65.0" />
-            <Label layoutX="58.0" layoutY="69.0" text="Movie ID">
+            <TextField fx:id="idMovieField" layoutX="181.0" layoutY="65.0" prefHeight="25.0" prefWidth="115.0" />
+            <Label layoutX="98.0" layoutY="69.0" text="Movie ID" textFill="#fffbfb">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -132,5 +111,35 @@
             <TableColumn fx:id="overView" prefWidth="238.0" text="OverView" />
         </columns>
       </TableView>
+      <Pane layoutX="-4.0" layoutY="399.0" prefHeight="122.0" prefWidth="951.0" style="-fx-background-color: #108d59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="79.0" layoutY="71.0" text="Actor Role" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="rolesField" layoutX="164.0" layoutY="67.0" />
+            <Label layoutX="75.0" layoutY="33.0" text="Actor Name" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameField" layoutX="165.0" layoutY="31.0" />
+            <TextField fx:id="nameFirstField" layoutX="420.0" layoutY="31.0" />
+            <Label layoutX="347.0" layoutY="33.0" text="First Name" textFill="#f8f8f8">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="-3.0" layoutY="525.0" prefHeight="40.0" prefWidth="951.0" style="-fx-background-color: #108d59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button fx:id="addNewMovieButton" layoutX="427.0" layoutY="8.0" mnemonicParsing="false" onAction="#addNewMovie" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #80334d;" text="Add Movie" textFill="#fcfafa" />
+            <Button fx:id="updateButton" layoutX="516.0" layoutY="8.0" mnemonicParsing="false" onAction="#updateMovieData" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #80334d;" text="Update Movie" textFill="WHITE" />
+            <Button fx:id="deleteMovieButton" layoutX="615.0" layoutY="8.0" mnemonicParsing="false" onAction="#deleteMovie" style="-fx-background-color: #80334d;" text="Delete Movie" textFill="#fcfafa" />
+            <Button fx:id="refreshButton" layoutX="703.0" layoutY="8.0" mnemonicParsing="false" onAction="#refreshList" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #80334d;" text="Refresh" textFill="#f2f0f0" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

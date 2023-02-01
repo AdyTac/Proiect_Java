@@ -6,8 +6,6 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-
-
 public class Main extends Application {
 	@Override
 	public void start(Stage Stage) {
@@ -18,12 +16,10 @@ public class Main extends Application {
 			Stage.setTitle("Login to application movie database");
 			Stage.setScene(scene);
 			Stage.show();
-
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
 	public static void main(String[] args) {
 		launch(args);
 	}

@@ -3,6 +3,7 @@ package services;
 import java.util.List;
 import javax.persistence.Persistence;
 import dao.AddMovieDao;
+import model.Distribution;
 import model.MovieProduction;
 
 public class AddMovieService {
@@ -32,6 +33,9 @@ public class AddMovieService {
 
 	public List<MovieProduction> getAllUsers() {
 		return addMovieDao.findAll();
+	}
+	public MovieProduction find(int id) {
+		return  addMovieDao.find(id);
 	}
 	
 	public MovieProduction findType(String type)throws Exception 

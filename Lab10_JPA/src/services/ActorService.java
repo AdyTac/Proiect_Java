@@ -4,6 +4,7 @@ import java.util.List;
 import javax.persistence.Persistence;
 import dao.ActorDao;
 import model.Actor;
+import model.MovieProduction;
 
 
 
@@ -30,6 +31,10 @@ public class ActorService {
 	public void remove(Actor user, int Id) {
 		actorDao.remove(user, Id);
 	}
+	public Actor find(int id) {
+		return  actorDao.find(id);
+	}
+	
 
 
 	public List<Actor> getAllUsers() {

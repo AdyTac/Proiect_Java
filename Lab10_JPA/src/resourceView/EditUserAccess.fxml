@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.EditUserListController">
    <children>
-      <Pane layoutX="13.0" layoutY="59.0" prefHeight="226.0" prefWidth="600.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Pane layoutX="13.0" layoutY="59.0" prefHeight="226.0" prefWidth="600.0" style="-fx-background-color: #108d59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <TextField fx:id="nameField" layoutX="173.0" layoutY="51.0" prefHeight="25.0" prefWidth="225.0" />
             <Button fx:id="addUser" layoutX="437.0" layoutY="55.0" mnemonicParsing="false" onAction="#addNewUser" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #80334d;" text="Add User" textFill="#f5f8f6">
@@ -58,16 +58,16 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="21.0" layoutY="6.0" prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Pane layoutX="21.0" layoutY="6.0" prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: #108d59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Label layoutX="76.0" layoutY="7.0" prefHeight="38.0" prefWidth="436.0" text="Manage the users from application" textFill="#80334d">
+            <Label layoutX="76.0" layoutY="7.0" prefHeight="38.0" prefWidth="436.0" text="Manage the users from application" textFill="#f5f2f3">
                <font>
                   <Font name="Bauhaus 93" size="25.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="13.0" layoutY="291.0" prefHeight="309.0" prefWidth="576.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Pane layoutX="13.0" layoutY="291.0" prefHeight="309.0" prefWidth="576.0" style="-fx-background-color: #108d59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Button fx:id="refreshTableList" layoutX="494.0" layoutY="262.0" mnemonicParsing="false" onAction="#refresList" style="-fx-background-color: #80334d;" text="Refresh List" textFill="#fcfafa" />
             <TableView fx:id="loginTableUsers" layoutX="30.0" layoutY="14.0" onMouseClicked="#getItem" prefHeight="234.0" prefWidth="541.0">

@@ -19,19 +19,19 @@ import javafx.scene.input.MouseEvent;
 import model.Actor;
 import model.Distribution;
 import model.KindOfMovie;
-import model.LoginUser;
 import model.MovieProduction;
 import services.ActorService;
 import services.AddMovieService;
 import services.DistributionService;
 import services.MovieService;
-import services.UserServices;
 
 public class AddDeleteMovie {
 	@FXML
 	private TextField idMovieField;
 	@FXML
 	private Button addNewMovieButton;
+	@FXML
+	private Button updateButton;
 	@FXML
 	private TextField movieNameField;
 	@FXML
@@ -46,6 +46,8 @@ public class AddDeleteMovie {
 	private TextField runTimeField;
 	@FXML
 	private Button deleteMovieButton;
+	@FXML
+	private Button refreshButton;
 	@FXML
 	private TextField deleteMovieField;
 	 @FXML
@@ -67,7 +69,7 @@ public class AddDeleteMovie {
 	 @FXML
 	 private TableColumn<MovieProduction,String> title;
 	 @FXML
-	 private TableColumn<MovieProduction, String> IMDB_rating;
+	 private TableColumn<MovieProduction, Integer> IMDB_rating;
 	 @FXML
 	 private TableColumn<MovieProduction, Integer> budget;
 	 @FXML
@@ -92,11 +94,9 @@ public class AddDeleteMovie {
 			budget.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("budget"));
 			homepage.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("homepage"));
 			releaseDate.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("releaseDate"));
-			IMDB_rating.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("IMDB_rating"));
+			IMDB_rating.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("IMDB_rating"));
 			runtime.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("runtime"));
 			overView.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("overview"));
-			
-			
 			movieTable.setItems(listMovie);
 		}
 	 
@@ -180,7 +180,7 @@ public class AddDeleteMovie {
 		scenaristField.clear();
 	}
 	 @FXML
-	    void getItem(MouseEvent e) {
+	void getItem(MouseEvent e) {
 		 index = movieTable.getSelectionModel().getSelectedIndex();
 		 if(index==-1)
 		 {
@@ -191,11 +191,10 @@ public class AddDeleteMovie {
 		 homePageField.setText(homepage.getCellData(index).toString());
 		 overViewField.setText(overView.getCellData(index).toString());
 		 bugetTextField.setText(budget.getCellData(index).toString());
-		 ratingField.setText(budget.getCellData(index).toString());
 		 runTimeField.setText(runtime.getCellData(index).toString());
-		
-		
-	  }
+		 ratingField.setText(IMDB_rating.getCellData(index).toString());
+		 
+         }
 	@FXML
 	private void deleteMovie(ActionEvent e2)
 	{
@@ -210,7 +209,71 @@ public class AddDeleteMovie {
 				e.printStackTrace();
 				showAlert();
 			}
+	
+	}
+	@FXML
+	private void updateMovieData(ActionEvent e2)
+	{
+		AddMovieService newObject=new AddMovieService();
+		
+		String idStr =idMovieField.getText();
+		int id = Integer.parseInt(idStr);
+		MovieProduction newMovi=newObject.find(id);
+		
+		System.out.println(newMovi);
+		
+		String title=movieNameField.getText();
+		newMovi.setTitle(title);
 				
+		String buget=bugetTextField.getText();
+		int bugget = Integer.parseInt(buget);
+       	newMovi.setBudget(bugget);
+
+    	String homePage=homePageField.getText();
+       	newMovi.setHomepage(homePage);
+    	
+    	String rating =ratingField.getText();
+    	int ratting= Integer.parseInt(rating); 
+    	newMovi.setIMDB_rating(ratting);
+       	
+    	String runTime=runTimeField.getText();
+    	int runttime =Integer.parseInt(runTime);
+    	newMovi.setRuntime(runttime);
+    	       	
+    	String overView =overViewField.getText();
+    	newMovi.setOverview(overView);
+    	
+    	LocalDate myDate = myDatePicker.getValue();
+    	try {
+    		newObject.updateUser(newMovi);
+		} catch (Exception e) {
+			e.printStackTrace();
+			showAlert();
+			}
+    	idMovieField.clear();
+		movieNameField.clear();
+		bugetTextField.clear();
+	    homePageField.clear();
+		ratingField.clear();
+		runTimeField.clear();
+		overViewField.clear();
+	}
+	@FXML
+	private void refreshList(ActionEvent e2)
+	{
+		AddMovieService newService =new AddMovieService();
+	    List<MovieProduction> allMovie =newService.getAllUsers();
+		
+		ObservableList<MovieProduction> listMovie= FXCollections.observableArrayList(new ArrayList<MovieProduction>(allMovie)); 
+		movieId.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("movieId"));
+		title.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("title"));
+		budget.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("budget"));
+		homepage.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("homepage"));
+		releaseDate.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("releaseDate"));
+		IMDB_rating.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("IMDB_rating"));
+		runtime.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("runtime"));
+		overView.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("overview"));
+		movieTable.setItems(listMovie);
 	}
 	
 	private void showAlert() {

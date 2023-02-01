@@ -26,7 +26,7 @@
                   <Font name="System Bold" size="13.0" />
                </font></Text>
             <TextField fx:id="rolesField" layoutX="133.0" layoutY="182.0" prefHeight="25.0" prefWidth="256.0" />
-            <Button fx:id="addNewActorButton" layoutX="149.0" layoutY="227.0" mnemonicParsing="false" onAction="#addNewActor" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #80334d;" text="Add actor" textFill="#fcfcfc" />
+            <Button fx:id="addNewActorButton" layoutX="92.0" layoutY="224.0" mnemonicParsing="false" onAction="#addNewActor" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #80334d;" text="Add actor" textFill="#fcfcfc" />
             <Label layoutX="149.0" layoutY="20.0" text="Add new actor" textFill="#80334d">
                <font>
                   <Font name="Bauhaus 93" size="32.0" />
@@ -48,14 +48,15 @@
                   <Image url="@../../bin/ImageView/Movie2.JPG" />
                </image>
             </ImageView>
-            <Button fx:id="deleteActorButton" layoutX="371.0" layoutY="227.0" mnemonicParsing="false" onAction="#deleteActor" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #80334d;" text="Delete" textFill="#f8f8f8" />
-            <Button layoutX="261.0" layoutY="227.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #80334d;" text="Update" textFill="#f5f4f4" />
+            <Button fx:id="deleteActorButton" layoutX="314.0" layoutY="224.0" mnemonicParsing="false" onAction="#deleteActor" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #80334d;" text="Delete" textFill="#f8f8f8" />
+            <Button fx:id="updateActorButton" layoutX="204.0" layoutY="224.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #80334d;" text="Update" textFill="#f5f4f4" />
             <TextField fx:id="idField" layoutX="133.0" layoutY="76.0" />
             <Label layoutX="46.0" layoutY="80.0" text="Actor ID">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
+            <Button fx:id="refreshButton" layoutX="436.0" layoutY="224.0" mnemonicParsing="false" onAction="#refreshList" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #80334d;" text="Refresh" textFill="#f5f3f3" />
          </children>
       </Pane>
       <TableView fx:id="actorTableView" layoutX="20.0" layoutY="310.0" onMouseClicked="#getItem" prefHeight="175.0" prefWidth="542.0">

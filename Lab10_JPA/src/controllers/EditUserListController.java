@@ -17,7 +17,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import model.LoginUser;
 import services.UserServices;
-
 public class EditUserListController{
 	@FXML
 	private TextField nameField;
@@ -126,11 +125,12 @@ public class EditUserListController{
 	@FXML
 	private void updateUser(ActionEvent e2){
 		UserServices userService = new UserServices();
-		LoginUser newObj=new LoginUser();
 		
 		String idStr =userID.getText();
 		int id = Integer.parseInt(idStr);
-		userService.find(id);
+		
+		LoginUser newObj=userService.find(id);
+		System.out.println(newObj);
 		
 		String name=nameField.getText();
 		String firstName=firstNameField.getText();
@@ -143,13 +143,9 @@ public class EditUserListController{
 		newObj.setUser(user);
 		newObj.setPassword(passw);
     	newObj.setEmail(email);
-    	
-		try {
-			System.out.println(id);
+    			try {
 			userService.updateUser(newObj);
-			System.out.println(newObj);
-			
-		 	} catch (Exception e) {
+		} catch (Exception e) {
 			
 				e.printStackTrace();
 			}

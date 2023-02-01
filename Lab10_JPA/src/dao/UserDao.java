@@ -1,7 +1,5 @@
 package dao;
 
-
-
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -13,9 +11,7 @@ import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Root;
 
 import model.LoginUser;
-
 public class UserDao extends Dao<LoginUser> {
-
 	private EntityManagerFactory factory;
 
 	public UserDao(EntityManagerFactory factory) {
@@ -34,7 +30,7 @@ public class UserDao extends Dao<LoginUser> {
 	}
 
 
-	public List<LoginUser> find(String name) {
+	public List<LoginUser> findUsersByName(String name) {
 		EntityManager em = getEntityManager();
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<LoginUser> q = cb.createQuery(LoginUser.class);
@@ -48,4 +44,5 @@ public class UserDao extends Dao<LoginUser> {
 		List<LoginUser> results = query.getResultList();
 		return results;
 	}
+	
 }

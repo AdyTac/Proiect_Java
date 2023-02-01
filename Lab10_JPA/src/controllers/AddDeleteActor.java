@@ -17,12 +17,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import model.Actor;
-import model.Distribution;
-import model.LoginUser;
 import services.ActorService;
-import services.DistributionService;
-import services.UserServices;
-
 
 
 public class AddDeleteActor {
@@ -40,6 +35,10 @@ public class AddDeleteActor {
 	private TextField rolesField;
 	@FXML
 	private Button deleteActorButton;
+	@FXML
+	private Button updateActorButton;
+	@FXML
+    private Button refreshButton;
 	@FXML
 	private TextField deleteActorField;
 	@FXML
@@ -102,10 +101,32 @@ public class AddDeleteActor {
 		 nameFirstField.setText(actorFirstName.getCellData(index).toString());
 		 nameField.setText(actorName.getCellData(index).toString());
 		 rolesField.setText(actorRole.getCellData(index).toString());
-		
-		 
-		
 	  }
+	 @FXML
+	 private void updateUser(ActionEvent e2){
+		ActorService  newActorService= new ActorService();
+		String idStr =idField.getText();
+		int id = Integer.parseInt(idStr);
+		Actor newActor=newActorService.find(id);
+		System.out.println(newActor);
+
+		String name=nameField.getText();
+		String firstName=nameFirstField.getText();
+		String role=rolesField.getText();
+
+		newActor.setActorName(name);
+		newActor.setActorFirstName(firstName);
+		newActor.setActorRole(role);
+		try {
+			newActorService.updateUser(newActor);
+		} catch (Exception e) {
+			e.printStackTrace();
+			}
+		nameField.clear();
+		rolesField.clear();
+		nameFirstField.clear();
+		idField.clear();
+	 }
 	@FXML
 	private void deleteActor(ActionEvent e2)
 	{
@@ -126,6 +147,19 @@ public class AddDeleteActor {
 		nameFirstField.clear();
 		idField.clear();
 		}
+	@FXML
+	private void refreshList(ActionEvent e) {
+		ActorService  newActor=new ActorService();
+		List<Actor> allActors = newActor.getAllUsers();
+		
+		ObservableList<Actor> listOffActors= FXCollections.observableArrayList(new ArrayList<Actor>(allActors));
+		idActor.setCellValueFactory(new PropertyValueFactory<Actor,Integer>("idActor"));
+		actorName.setCellValueFactory(new PropertyValueFactory<Actor,String>("actorName"));
+		actorFirstName.setCellValueFactory(new PropertyValueFactory<Actor,String>("actorFirstName"));
+		actorRole.setCellValueFactory(new PropertyValueFactory<Actor,String>("actorRole"));
+		actorTableView.setItems(listOffActors);
+	}
+	
 	
 	private void showAlert() {
 		Alert alert = new Alert(AlertType.WARNING);

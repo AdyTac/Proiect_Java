@@ -32,7 +32,7 @@ public abstract class Dao<T> {
 		EntityManager em = getEntityManager();
 		try {
 			em.getTransaction().begin();
-			em.merge(entity);
+			em.merge(entity); 
 			em.getTransaction().commit();
 		} catch (RuntimeException e) {
 			em.getTransaction().rollback();
@@ -68,6 +68,7 @@ public abstract class Dao<T> {
 		}
 		return null;
 	}
+	/*
 	public T findName(String name) {
 		EntityManager em = getEntityManager();
 		try {
@@ -81,7 +82,7 @@ public abstract class Dao<T> {
 		}
 		return null;
 	}
-	
+	*/
 
 	public List<T> findAll() {
 		EntityManager em = getEntityManager();

@@ -5,11 +5,8 @@ package services;
 import java.util.List;
 
 import javax.persistence.Persistence;
-
-
-
 import dao.UserDao;
-import model.KindOfMovie;
+
 import model.LoginUser;
 
 public class UserServices {
@@ -31,21 +28,17 @@ public class UserServices {
 		userDao.update(updatedUser);
 	}
 	
-	public void remove(LoginUser user, int Id) {
-		userDao.remove(user, Id);
+	public void remove(LoginUser user, int id) {
+		userDao.remove(user, id);
 	}
-	public void find(int Id) {
-		userDao.find(Id);
+	public LoginUser find(int id) {
+		return  userDao.find(id);
 	}
-
-
 	public List<LoginUser> getAllUsers() {
 		return userDao.findAll();
 	}
-
-
 		public LoginUser findUser(String user, String pass) throws Exception {
-			List<LoginUser> users = userDao.find(user);
+			List<LoginUser> users = userDao.findUsersByName(user);
 			if (users.size() == 0) {
 				throw new Exception("User not found!");
 			}
@@ -58,16 +51,16 @@ public class UserServices {
 		}
 		public LoginUser findType(String type)throws Exception 
 		{
-			List<LoginUser> userSearch=userDao.find(type);
+			List<LoginUser> userSearch=userDao.findUsersByName(type);
 			LoginUser u = userSearch.get(0);
 			int idKindOf= u.getIdUser();
 			System.out.println(idKindOf);
-		//	movieDao.remove(u,idKindOf );
+			//movieDao.remove(u,idKindOf );
 			return u;
 		}
 		public LoginUser findDelete(String type)throws Exception 
 		{
-			List<LoginUser> userSearch=userDao.find(type);
+			List<LoginUser> userSearch=userDao.findUsersByName(type);
 			LoginUser u = userSearch.get(0);
 			int idKindOf= u.getIdUser();
 			System.out.println(idKindOf);

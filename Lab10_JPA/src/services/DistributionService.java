@@ -4,6 +4,7 @@ import java.util.List;
 import javax.persistence.Persistence;
 import dao.DistributionDao;
 import model.Distribution;
+import model.LoginUser;
 
 public class DistributionService {
 
@@ -28,6 +29,9 @@ public class DistributionService {
 	
 	public void remove(Distribution user, int Id) {
 		addDistribDao.remove(user, Id);
+	}
+	public Distribution find(int id) {
+		return  addDistribDao.find(id);
 	}
 
 

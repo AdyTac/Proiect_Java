@@ -25,12 +25,12 @@ import javafx.fxml.FXMLLoader;
 public class UserController {
 	@FXML
 	public ListView<LoginUser> userListView;
-
-	
 	@FXML
 	private Label myLabel;
 	@FXML
 	private Button loginButton;
+	@FXML
+	private Button addButton;
 	@FXML
 	private TextField userField;
 	@FXML
@@ -64,7 +64,7 @@ public class UserController {
 		}
 	}
 	@FXML
-	private void addNewUserU(ActionEvent event) {
+	private void addNewUser(ActionEvent event) {
 		UserServices userService = new UserServices();
 		LoginUser new1=new LoginUser();
 

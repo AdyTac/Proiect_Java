@@ -91,9 +91,32 @@ public class DistributionController {
 		 idField.setText(idDistribution.getCellData(index).toString());
 		 directorNameField.setText(director.getCellData(index).toString());
 		 scenaristField.setText(scenario.getCellData(index).toString());
-		
-		
+
 	  }
+	 @FXML
+	 private void updateUser(ActionEvent e2){
+		 DistributionService  newDistrib=new DistributionService();
+		 String idStr =idField.getText();
+		 int id = Integer.parseInt(idStr);
+		 Distribution distrib=newDistrib.find(id);
+		 System.out.println(distrib);
+		 
+		 String director=directorNameField.getText();
+		 String scenario=scenaristField.getText();
+		 
+		 distrib.setDirector(director);
+		 distrib.setScenario(scenario);
+		 try {
+			 newDistrib.updateUser(distrib);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		     directorNameField.clear();
+			scenaristField.clear();
+			idField.clear();
+		 
+		 
+	 }
 	@FXML
 	private void deletDistribution(ActionEvent e2)
 	{

@@ -10,15 +10,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<!--xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"-->
 
 <AnchorPane prefHeight="286.0" prefWidth="390.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.UserController">
    <children>
       <AnchorPane layoutX="-6.0" layoutY="6.0" prefHeight="297.0" prefWidth="568.0">
          <children>
-            <Pane layoutX="23.0" layoutY="14.0" prefHeight="214.0" prefWidth="522.0" style="-fx-background-color: #3bfbda;" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Pane layoutX="23.0" layoutY="14.0" prefHeight="214.0" prefWidth="522.0" style="-fx-background-color: #108d59;" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label fx:id="myLabel" layoutX="166.0" layoutY="24.0" text="Movie Database" textAlignment="CENTER" textFill="#80334d">
+                  <Label fx:id="myLabel" layoutX="166.0" layoutY="24.0" text="Movie Database" textAlignment="CENTER" textFill="#f8f6f7">
                      <font>
                         <Font name="Bauhaus 93" size="33.0" />
                      </font>
@@ -44,9 +43,9 @@
                   </ImageView>
                </children>
             </Pane>
-            <Pane layoutX="23.0" layoutY="221.0" prefHeight="71.0" prefWidth="568.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <Pane layoutX="23.0" layoutY="221.0" prefHeight="71.0" prefWidth="568.0" style="-fx-background-color: #108d59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Label layoutX="312.0" layoutY="21.0" text="New registration" textFill="#80334d">
+                  <Label layoutX="312.0" layoutY="21.0" text="New registration" textFill="#fffbfd">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Label>

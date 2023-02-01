@@ -4,12 +4,6 @@ import java.awt.Label;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -74,9 +68,9 @@ public class MenuController {
 	 @FXML
 	 private TableColumn<MovieProduction,String> title;
 	 @FXML
-	 private TableColumn<MovieProduction, String> IMDB_rating;
+	 private TableColumn<MovieProduction, Integer> IMDB_rating;
 	 @FXML
-	 private TableColumn<MovieProduction, String> budget;
+	 private TableColumn<MovieProduction, Integer> budget;
 	 @FXML
 	 private TableColumn<MovieProduction,String> homepage;
 	 @FXML
@@ -101,10 +95,10 @@ public class MenuController {
 		ObservableList<MovieProduction> listMovie= FXCollections.observableArrayList(new ArrayList<MovieProduction>(allMovie));
 		movieId.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("movieId"));
 		title.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("title"));
-		budget.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("budget"));
+		budget.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("budget"));
 		homepage.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("homepage"));
 		releaseDate.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("releaseDate"));
-		IMDB_rating.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("IMDB_rating"));
+		IMDB_rating.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("IMDB_rating"));
 		runtime.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("runtime"));
 		movieTable.setItems(listMovie);
 		
@@ -209,7 +203,7 @@ try {
 }
 	
 	 @FXML
-	    void getItem(MouseEvent e) {
+	void getItem(MouseEvent e) {
 		 index = tabelData.getSelectionModel().getSelectedIndex();
 		 if(index==-1)
 		 {
@@ -274,10 +268,10 @@ try {
 		ObservableList<MovieProduction> listMovie= FXCollections.observableArrayList(new ArrayList<MovieProduction>(allMovie));
 		movieId.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("movieId"));
 		title.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("title"));
-		budget.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("budget"));
+		budget.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("budget"));
 		homepage.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("homepage"));
 		releaseDate.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("releaseDate"));
-		IMDB_rating.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("IMDB_rating"));
+		IMDB_rating.setCellValueFactory(new PropertyValueFactory<MovieProduction,Integer>("IMDB_rating"));
 		runtime.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("runtime"));
 		movieTable.setItems(listMovie);
 		

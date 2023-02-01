@@ -9,26 +9,26 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="543.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.UserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="543.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UserController">
    <children>
-      <Pane layoutX="18.0" layoutY="91.0" prefHeight="220.0" prefWidth="507.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Pane layoutX="18.0" layoutY="91.0" prefHeight="220.0" prefWidth="507.0" style="-fx-background-color: #108d59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <TextField fx:id="registerUserField" layoutX="158.0" layoutY="54.0" prefHeight="25.0" prefWidth="260.0" />
             <TextField fx:id="registerPasswField" layoutX="158.0" layoutY="98.0" prefHeight="25.0" prefWidth="260.0" />
-            <Button fx:id="addNewUser" layoutX="220.0" layoutY="146.0" mnemonicParsing="false" onAction="#addNewUserU" prefHeight="25.0" prefWidth="100.0" text="Register" />
-            <Label layoutX="56.0" layoutY="98.0" text="Password">
+            <Button fx:id="addButton" layoutX="220.0" layoutY="146.0" mnemonicParsing="false" onAction="#addNewUser" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: #80334d;" text="Register" textFill="#fcfafa" />
+            <Label layoutX="56.0" layoutY="98.0" text="Password" textFill="#fcfcfc">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="58.0" layoutY="54.0" text="User">
+            <Label layoutX="58.0" layoutY="54.0" text="User" textFill="#f5f2f2">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="16.0" layoutY="7.0" prefHeight="80.0" prefWidth="543.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Pane layoutX="16.0" layoutY="7.0" prefHeight="80.0" prefWidth="543.0" style="-fx-background-color: #108d59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <ImageView fitHeight="55.0" fitWidth="54.0" layoutX="439.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -45,7 +45,7 @@
                   <Image url="@../../bin/imageView/NewUser.JPG" />
                </image>
             </ImageView>
-            <Label layoutX="111.0" layoutY="10.0" prefHeight="33.0" prefWidth="307.0" text="Register for access database" textFill="#80334d">
+            <Label layoutX="118.0" layoutY="24.0" prefHeight="33.0" prefWidth="307.0" text="Register for access database" textFill="#fcfafb">
                <font>
                   <Font name="Bauhaus 93" size="20.0" />
                </font>
