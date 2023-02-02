@@ -10,24 +10,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="581.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.AddDeleteActor">
    <children>
-      <Pane layoutX="22.0" layoutY="8.0" prefHeight="294.0" prefWidth="581.0" style="-fx-background-color: #3bfbda;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Pane layoutX="22.0" layoutY="8.0" prefHeight="294.0" prefWidth="581.0" style="-fx-background-color: #424354;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <TextField fx:id="nameField" layoutX="133.0" layoutY="111.0" prefHeight="25.0" prefWidth="256.0" />
-            <Text layoutX="45.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font></Text>
-            <Text layoutX="48.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rolle">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font></Text>
             <TextField fx:id="rolesField" layoutX="133.0" layoutY="182.0" prefHeight="25.0" prefWidth="256.0" />
-            <Button fx:id="addNewActorButton" layoutX="92.0" layoutY="224.0" mnemonicParsing="false" onAction="#addNewActor" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #80334d;" text="Add actor" textFill="#fcfcfc" />
-            <Label layoutX="149.0" layoutY="20.0" text="Add new actor" textFill="#80334d">
+            <Button fx:id="addNewActorButton" layoutX="92.0" layoutY="224.0" mnemonicParsing="false" onAction="#addNewActor" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #666f80;" text="Add actor" textFill="#fcfcfc" />
+            <Label layoutX="149.0" layoutY="20.0" text="Add new actor" textFill="#fcfafb">
                <font>
                   <Font name="Bauhaus 93" size="32.0" />
                </font>
@@ -37,7 +28,7 @@
                   <Image url="@../../bin/imagesView/Movie2.JPG" />
                </image>
             </ImageView>
-            <Label layoutX="45.0" layoutY="151.0" text="First Name">
+            <Label layoutX="45.0" layoutY="151.0" text="First Name" textFill="#fffefe">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -48,23 +39,33 @@
                   <Image url="@../../bin/ImageView/Movie2.JPG" />
                </image>
             </ImageView>
-            <Button fx:id="deleteActorButton" layoutX="314.0" layoutY="224.0" mnemonicParsing="false" onAction="#deleteActor" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #80334d;" text="Delete" textFill="#f8f8f8" />
-            <Button fx:id="updateActorButton" layoutX="204.0" layoutY="224.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #80334d;" text="Update" textFill="#f5f4f4" />
+            <Button fx:id="deleteActorButton" layoutX="314.0" layoutY="224.0" mnemonicParsing="false" onAction="#deleteActor" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: #666f80;" text="Delete" textFill="#f8f8f8" />
+            <Button fx:id="updateActorButton" layoutX="204.0" layoutY="224.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #666f80;" text="Update" textFill="#f5f4f4" />
             <TextField fx:id="idField" layoutX="133.0" layoutY="76.0" />
-            <Label layoutX="46.0" layoutY="80.0" text="Actor ID">
+            <Label layoutX="46.0" layoutY="80.0" text="Actor ID" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Button fx:id="refreshButton" layoutX="436.0" layoutY="224.0" mnemonicParsing="false" onAction="#refreshList" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #80334d;" text="Refresh" textFill="#f5f3f3" />
+            <Button fx:id="refreshButton" layoutX="436.0" layoutY="224.0" mnemonicParsing="false" onAction="#refreshList" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #666f80;" text="Refresh" textFill="#f5f3f3" />
+            <Label layoutX="46.0" layoutY="115.0" text="Name" textFill="#f8f6f6">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="186.0" text="Role" textFill="#fcfafa">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
-      <TableView fx:id="actorTableView" layoutX="20.0" layoutY="310.0" onMouseClicked="#getItem" prefHeight="175.0" prefWidth="542.0">
+      <TableView fx:id="actorTableView" layoutY="310.0" onMouseClicked="#getItem" prefHeight="175.0" prefWidth="581.0">
         <columns>
           <TableColumn fx:id="idActor" prefWidth="35.0" text="ID" />
-          <TableColumn fx:id="actorName" prefWidth="144.0" text="Name" />
-            <TableColumn fx:id="actorFirstName" prefWidth="198.0" text="FirstName" />
-            <TableColumn fx:id="actorRole" prefWidth="164.0" text="Role " />
+          <TableColumn fx:id="actorName" prefWidth="171.0" text="Name" />
+            <TableColumn fx:id="actorFirstName" prefWidth="223.0" text="FirstName" />
+            <TableColumn fx:id="actorRole" prefWidth="151.0" text="Role " />
         </columns>
       </TableView>
    </children>

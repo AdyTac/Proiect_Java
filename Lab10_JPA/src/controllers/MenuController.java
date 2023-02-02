@@ -46,6 +46,8 @@ public class MenuController {
 	@FXML
 	private Button removeGenre;
 	@FXML
+	private Button rentAMovieButton;
+	@FXML
 	private Button distributionButton;
 	@FXML
 	private TextField newTypeOf;
@@ -281,6 +283,24 @@ try {
 		tabelData.setItems(list);
 		System.out.println(list);
 	
+		
+	}
+	@FXML
+	private void rentAMovie(ActionEvent e) {
+		try {
+			
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resourceView/RentMovieInterface.fxml"));
+			Parent root = (Parent) fxmlLoader.load();
+			Stage stage = new Stage();
+			stage.setTitle("Add new movie");
+			stage.setResizable(false);
+			stage.setScene(new Scene(root));
+			stage.show();
+		
+		}catch (IOException ext) {
+			ext.printStackTrace();
+			showAlert();
+		}
 		
 	}
 	

@@ -11,22 +11,22 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DistributionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="912.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.DistributionController">
    <children>
-      <Pane layoutY="95.0" prefHeight="287.0" prefWidth="349.0" style="-fx-background-color: #108d59;" AnchorPane.leftAnchor="0.0">
+      <Pane layoutY="95.0" prefHeight="287.0" prefWidth="349.0" style="-fx-background-color: #424354;" AnchorPane.leftAnchor="0.0">
          <children>
             <TextField fx:id="directorNameField" layoutX="117.0" layoutY="55.0" prefHeight="25.0" prefWidth="182.0" />
             <TextField fx:id="scenaristField" layoutX="117.0" layoutY="97.0" prefHeight="25.0" prefWidth="182.0" />
-            <Button fx:id="addDistribution" layoutX="105.0" layoutY="141.0" mnemonicParsing="false" onAction="#addDistribution" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #80334d;" text="Add " textFill="#fcfafa">
+            <Button fx:id="addDistribution" layoutX="105.0" layoutY="141.0" mnemonicParsing="false" onAction="#addDistribution" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #666f80;" text="Add " textFill="#fcfafa">
                <font>
                   <Font name="Arial" size="12.0" />
                </font></Button>
-            <Label layoutX="27.0" layoutY="59.0" text="Director">
+            <Label layoutX="27.0" layoutY="59.0" text="Director" textFill="#fcf8f8">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="27.0" layoutY="101.0" text="Scenariu">
+            <Label layoutX="27.0" layoutY="101.0" text="Scenariu" textFill="#fffdfd">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -36,38 +36,38 @@
                   <Image url="@../../bin/imageView/Movie2.JPG" />
                </image>
             </ImageView>
-            <Button fx:id="updateButton" layoutX="205.0" layoutY="141.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #80334d;" text="Update" textFill="#fcfafa" />
-            <Button fx:id="deleteButton" layoutX="146.0" layoutY="182.0" mnemonicParsing="false" onAction="#deletDistribution" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #80334d;" text="Delete" textFill="#fcfafa" />
+            <Button fx:id="updateButton" layoutX="205.0" layoutY="141.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #666f80;" text="Update" textFill="#fcfafa" />
+            <Button fx:id="deleteButton" layoutX="146.0" layoutY="182.0" mnemonicParsing="false" onAction="#deletDistribution" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #666f80;" text="Delete" textFill="#fcfafa" />
             <TextField fx:id="idField" layoutX="117.0" layoutY="14.0" prefHeight="25.0" prefWidth="96.0" />
-            <Label layoutX="27.0" layoutY="18.0" text="ID ">
+            <Label layoutX="27.0" layoutY="18.0" text="ID " textFill="#fffdfd">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="356.0" layoutY="95.0" prefHeight="287.0" prefWidth="489.0" style="-fx-background-color: #108d59;" AnchorPane.rightAnchor="0.0">
+      <Pane layoutX="361.0" layoutY="95.0" prefHeight="287.0" prefWidth="552.0" style="-fx-background-color: #424354;" AnchorPane.rightAnchor="-1.0">
          <children>
-            <TableView fx:id="tableDirectorWriter" layoutX="14.0" layoutY="11.0" onMouseClicked="#getItem" prefHeight="225.0" prefWidth="461.0">
+            <TableView fx:id="tableDirectorWriter" layoutX="14.0" layoutY="11.0" onMouseClicked="#getItem" prefHeight="225.0" prefWidth="529.0">
               <columns>
                 <TableColumn fx:id="idDistribution" prefWidth="38.0" text="ID" />
-                <TableColumn fx:id="director" prefWidth="208.0" text="Director" />
-                  <TableColumn fx:id="scenario" prefWidth="214.0" text="Writer" />
+                <TableColumn fx:id="director" prefWidth="244.0" text="Director" />
+                  <TableColumn fx:id="scenario" prefWidth="246.4000244140625" text="Writer" />
               </columns>
             </TableView>
-            <Button fx:id="refreshList" layoutX="403.0" layoutY="250.0" mnemonicParsing="false" onAction="#refreshList" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #80334d;" text="Refresh" textFill="#f8f7f7" />
+            <Button fx:id="refreshList" layoutX="255.0" layoutY="248.0" mnemonicParsing="false" onAction="#refreshList" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: #666f80;" text="Refresh" textFill="#f8f7f7" />
          </children>
       </Pane>
-      <Pane layoutX="1.0" layoutY="8.0" prefHeight="75.0" prefWidth="845.0" style="-fx-background-color: #108d59;">
+      <Pane layoutX="1.0" layoutY="8.0" prefHeight="75.0" prefWidth="912.0" style="-fx-background-color: #424354;">
          <children>
-            <Label layoutX="265.0" layoutY="20.0" text="Director and Writer" textFill="#fffefe">
+            <Label layoutX="347.0" layoutY="20.0" text="Director and Writer" textFill="#fffefe">
                <font>
                   <Font name="Bauhaus 93" size="31.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <ImageView fitHeight="66.0" fitWidth="157.0" layoutX="23.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="60.0" fitWidth="203.0" layoutX="23.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../bin/imageView/MovieBanner.JPG" />
          </image>

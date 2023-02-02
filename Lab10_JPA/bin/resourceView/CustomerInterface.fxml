@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="789.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.CustomerControler">
+   <children>
+      <Pane layoutY="6.0" prefHeight="91.0" prefWidth="789.0" style="-fx-background-color: #424354;">
+         <children>
+            <Label layoutX="252.0" layoutY="26.0" text="Add new customer" textFill="#f5f3f3">
+               <font>
+                  <Font name="Bauhaus 93" size="35.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="106.0" prefHeight="294.0" prefWidth="789.0" style="-fx-background-color: #424354;">
+         <children>
+            <Button fx:id="addCustomerButton" layoutX="641.0" layoutY="55.0" mnemonicParsing="false" style="-fx-background-color: #666f80;" text="Add Customer" textFill="#f8f7f7" />
+            <Button fx:id="CustomerUpdate" layoutX="641.0" layoutY="97.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #666f80;" text="Update" textFill="#fcfcfc" />
+            <Button fx:id="customerDelete" layoutX="641.0" layoutY="138.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #666f80;" text="Delete" textFill="#fcfcfc" />
+            <TextField fx:id="customerID" layoutX="185.0" layoutY="58.0" prefHeight="25.0" prefWidth="174.0" />
+            <TextField fx:id="customername" layoutX="185.0" layoutY="97.0" prefHeight="25.0" prefWidth="174.0" />
+            <TextField fx:id="customerFirstname" layoutX="185.0" layoutY="135.0" prefHeight="25.0" prefWidth="174.0" />
+            <TextField fx:id="customerEmail" layoutX="185.0" layoutY="172.0" prefHeight="25.0" prefWidth="174.0" />
+            <Label layoutX="110.0" layoutY="62.0" text="User ID" textFill="#f8f6f6">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="101.0" text="Name" textFill="#fcfafa">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="111.0" layoutY="139.0" text="First Name" textFill="#f8f6f6">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="113.0" layoutY="176.0" text="E-mail" textFill="#fcf9f9">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="customerDate" layoutX="185.0" layoutY="209.0" />
+            <Label layoutX="91.0" layoutY="212.0" text="Register Date" textFill="#fffbfb">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="7.0" layoutY="407.0" prefHeight="294.0" prefWidth="776.0" style="-fx-background-color: #424354;">
+         <children>
+            <TableView fx:id="customerTable" layoutX="98.0" layoutY="11.0" onMouseClicked="#getItem" prefHeight="273.0" prefWidth="556.0">
+              <columns>
+                <TableColumn fx:id="idCustomer" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="nameCustomer" prefWidth="111.0" text="Name" />
+                  <TableColumn fx:id="firstNameCustomer" prefWidth="110.0" text="First Name" />
+                  <TableColumn fx:id="emailCustomer" prefWidth="127.0" text="E-mail" />
+                  <TableColumn fx:id="registerDateCustom" prefWidth="157.0" text="Register Date" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

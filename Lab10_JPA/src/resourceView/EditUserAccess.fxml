@@ -10,36 +10,36 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.EditUserListController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EditUserListController">
    <children>
-      <Pane layoutX="13.0" layoutY="59.0" prefHeight="226.0" prefWidth="600.0" style="-fx-background-color: #108d59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Pane layoutX="13.0" layoutY="59.0" prefHeight="226.0" prefWidth="600.0" style="-fx-background-color: #424354;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <TextField fx:id="nameField" layoutX="173.0" layoutY="51.0" prefHeight="25.0" prefWidth="225.0" />
-            <Button fx:id="addUser" layoutX="437.0" layoutY="55.0" mnemonicParsing="false" onAction="#addNewUser" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #80334d;" text="Add User" textFill="#f5f8f6">
+            <Button fx:id="addUser" layoutX="437.0" layoutY="55.0" mnemonicParsing="false" onAction="#addNewUser" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #666f80;" text="Add User" textFill="#f5f8f6">
                <font>
                   <Font name="Arial" size="12.0" />
                </font></Button>
-            <Label layoutX="83.0" layoutY="59.0" prefHeight="17.0" prefWidth="90.0" text="Name">
+            <Label layoutX="83.0" layoutY="59.0" prefHeight="17.0" prefWidth="90.0" text="Name" textFill="#f2eeee">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="83.0" layoutY="88.0" text="Firest Name">
+            <Label layoutX="83.0" layoutY="88.0" text="Firest Name" textFill="#fcfafa">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="83.0" layoutY="117.0" text="User ">
+            <Label layoutX="83.0" layoutY="117.0" text="User " textFill="#fcf9f9">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="83.0" layoutY="148.0" text="Password">
+            <Label layoutX="83.0" layoutY="148.0" text="Password" textFill="#fffdfd">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="83.0" layoutY="182.0" text="E-mail">
+            <Label layoutX="83.0" layoutY="182.0" text="E-mail" textFill="#f8f7f7">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -48,17 +48,17 @@
             <TextField fx:id="userField" layoutX="173.0" layoutY="115.0" prefHeight="25.0" prefWidth="225.0" />
             <TextField fx:id="emailField" layoutX="173.0" layoutY="178.0" prefHeight="25.0" prefWidth="225.0" />
             <PasswordField fx:id="passwField" layoutX="173.0" layoutY="146.0" prefHeight="25.0" prefWidth="225.0" />
-            <Button fx:id="updateuserButton" layoutX="437.0" layoutY="105.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #80334d;" text="Update" textFill="WHITE" />
-            <Button fx:id="deletButton" layoutX="437.0" layoutY="153.0" mnemonicParsing="false" onAction="#deletUser" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #80334d;" text="Delete" textFill="#f5f2f2" />
+            <Button fx:id="updateuserButton" layoutX="437.0" layoutY="105.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #666f80;" text="Update" textFill="WHITE" />
+            <Button fx:id="deletButton" layoutX="437.0" layoutY="153.0" mnemonicParsing="false" onAction="#deletUser" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #666f80;" text="Delete" textFill="#f5f2f2" />
             <TextField fx:id="userID" layoutX="173.0" layoutY="20.0" prefHeight="25.0" prefWidth="225.0" />
-            <Label layoutX="81.0" layoutY="24.0" text="User ID">
+            <Label layoutX="81.0" layoutY="24.0" text="User ID" textFill="#f8f8f8">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="21.0" layoutY="6.0" prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: #108d59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Pane layoutX="21.0" layoutY="6.0" prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: #424354;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label layoutX="76.0" layoutY="7.0" prefHeight="38.0" prefWidth="436.0" text="Manage the users from application" textFill="#f5f2f3">
                <font>
@@ -67,9 +67,9 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="13.0" layoutY="291.0" prefHeight="309.0" prefWidth="576.0" style="-fx-background-color: #108d59;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <Pane layoutX="13.0" layoutY="291.0" prefHeight="309.0" prefWidth="576.0" style="-fx-background-color: #424354;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button fx:id="refreshTableList" layoutX="494.0" layoutY="262.0" mnemonicParsing="false" onAction="#refresList" style="-fx-background-color: #80334d;" text="Refresh List" textFill="#fcfafa" />
+            <Button fx:id="refreshTableList" layoutX="494.0" layoutY="262.0" mnemonicParsing="false" onAction="#refresList" style="-fx-background-color: #666f80;" text="Refresh List" textFill="#fcfafa" />
             <TableView fx:id="loginTableUsers" layoutX="30.0" layoutY="14.0" onMouseClicked="#getItem" prefHeight="234.0" prefWidth="541.0">
               <columns>
                 <TableColumn fx:id="idUser" prefWidth="43.0" text="Id." />

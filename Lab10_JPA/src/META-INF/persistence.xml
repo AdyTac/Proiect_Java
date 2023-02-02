@@ -6,6 +6,7 @@
 		<class>model.Actor</class>
 		<class>model.MovieProduction</class>
 		<class>model.LoginUser</class>
+		<class>model.Customer</class>
 		<properties>
 		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/moviedb_2023"/>
 		<property name="javax.persistence.jdbc.user" value="root"/>
