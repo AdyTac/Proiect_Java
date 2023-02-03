@@ -3,7 +3,6 @@ package services;
 import java.util.List;
 import javax.persistence.Persistence;
 import dao.AddMovieDao;
-import model.Distribution;
 import model.MovieProduction;
 
 public class AddMovieService {
@@ -44,7 +43,6 @@ public class AddMovieService {
 		MovieProduction u = type_of.get(0);
 		int idMovie= u.getMovieId();
 		System.out.println(idMovie);
-		//addMovieDao.remove(u,idMovie );
 		return u;
 	}
 	

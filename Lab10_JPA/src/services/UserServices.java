@@ -67,5 +67,6 @@ public class UserServices {
 			userDao.remove(u,idKindOf );
 			return u;
 		}
+		
 
 }

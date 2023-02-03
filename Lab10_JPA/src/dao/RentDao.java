@@ -9,16 +9,15 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.ParameterExpression;
 import javax.persistence.criteria.Root;
+import model.Rentdata;
 
-import model.Customer;
-
-public class CustomerDao  extends Dao<Customer>{
+public class RentDao extends Dao<Rentdata>{
 
 
 	private EntityManagerFactory factory;
 
-	public CustomerDao(EntityManagerFactory factory) {
-		super(Customer.class);
+	public RentDao(EntityManagerFactory factory) {
+		super(Rentdata.class);
 		this.factory = factory;
 	}
 
@@ -32,18 +31,18 @@ public class CustomerDao  extends Dao<Customer>{
 		}
 	}
 	
-	public List<Customer> find(String name) {
+	public List<Rentdata> find(String name) {
 		EntityManager em = getEntityManager();
 		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<Customer> q = cb.createQuery(Customer.class);
+		CriteriaQuery<Rentdata> q = cb.createQuery(Rentdata.class);
 
-		Root<Customer> c = q.from(Customer.class);
+		Root<Rentdata> c = q.from(Rentdata.class);
 		ParameterExpression<String> paramName = cb.parameter(String.class);
-		q.select(c).where(cb.equal(c.get("custom"), paramName));
-		TypedQuery<Customer> query = em.createQuery(q);
+		q.select(c).where(cb.equal(c.get("name"), paramName));
+		TypedQuery<Rentdata> query = em.createQuery(q);
 		query.setParameter(paramName, name);
 
-		List<Customer> results = query.getResultList();
+		List<Rentdata> results = query.getResultList();
 		return results;
 
 	}

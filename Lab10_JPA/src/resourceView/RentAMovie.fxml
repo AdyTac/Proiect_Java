@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#getItem" prefHeight="488.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddRentMovieController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#getItem" prefHeight="588.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.AddRentMovieController">
    <children>
       <Pane layoutX="-4.0" prefHeight="75.0" prefWidth="1117.0" style="-fx-background-color: #424354;">
          <children>
@@ -28,47 +28,53 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane layoutX="-1.0" layoutY="78.0" prefHeight="412.0" prefWidth="516.0" style="-fx-background-color: #424354;">
+      <Pane layoutX="-1.0" layoutY="78.0" prefHeight="252.0" prefWidth="516.0" style="-fx-background-color: #424354;">
          <children>
-            <Button layoutX="407.0" layoutY="97.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="92.0" style="-fx-background-color: #666f80;" text="Rent" textFill="#fffdfd">
+            <Button layoutX="404.0" layoutY="33.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="92.0" style="-fx-background-color: #666f80;" text="Rent" textFill="#fffdfd">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="407.0" layoutY="133.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #666f80;" text="Update" textFill="#f8f7f7" />
-            <Button layoutX="408.0" layoutY="168.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #666f80;" text="Delet" textFill="#fcfafa" />
-            <DatePicker fx:id="PickUpData" layoutX="115.0" layoutY="284.0" promptText="Pick up movie" />
-            <DatePicker fx:id="returnData" layoutX="115.0" layoutY="356.0" promptText="Return movie" />
-            <Label layoutX="154.0" layoutY="256.0" text="Pick up movie" textFill="#f8f8f8">
+            <Button layoutX="404.0" layoutY="81.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #666f80;" text="Update" textFill="#f8f7f7" />
+            <Button layoutX="404.0" layoutY="123.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #666f80;" text="Delet" textFill="#fcfafa" />
+            <DatePicker fx:id="PickUpData" layoutX="41.0" layoutY="208.0" promptText="Pick up movie" />
+            <DatePicker fx:id="returnData" layoutX="296.0" layoutY="208.0" promptText="Return movie" />
+            <Label layoutX="80.0" layoutY="180.0" text="Pick up movie" textFill="#f8f8f8">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label layoutX="146.0" layoutY="328.0" text="Return movie " textFill="WHITE">
+            <Label layoutX="327.0" layoutY="180.0" text="Return movie " textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="movieIdField" layoutX="131.0" layoutY="98.0" prefHeight="25.0" prefWidth="255.0" />
-            <TextField fx:id="titelField" layoutX="131.0" layoutY="132.0" prefHeight="25.0" prefWidth="255.0" />
-            <TextField fx:id="customerIDField" layoutX="131.0" layoutY="166.0" prefHeight="25.0" prefWidth="255.0" />
-            <Label layoutX="24.0" layoutY="102.0" text="Movie ID" textFill="#fcf9f9" />
-            <Label layoutX="22.0" layoutY="200.0" text="Customer name" textFill="#f5f0f0" />
-            <Label layoutX="24.0" layoutY="136.0" text="Movie name" textFill="#f8f5f5" />
-            <TextField fx:id="customerName" layoutX="131.0" layoutY="197.0" prefHeight="25.0" prefWidth="255.0" />
-            <Label layoutX="24.0" layoutY="170.0" text="ID customer" textFill="#f5f4f4" />
+            <TextField fx:id="movieIdField" layoutX="128.0" layoutY="25.0" prefHeight="25.0" prefWidth="255.0" />
+            <TextField fx:id="titelField" layoutX="128.0" layoutY="59.0" prefHeight="25.0" prefWidth="255.0" />
+            <TextField fx:id="customerIDField" layoutX="128.0" layoutY="91.0" prefHeight="25.0" prefWidth="255.0" />
+            <Label layoutX="21.0" layoutY="29.0" text="Movie ID" textFill="#fcf9f9" />
+            <Label layoutX="19.0" layoutY="127.0" text="Customer name" textFill="#f5f0f0" />
+            <Label layoutX="21.0" layoutY="63.0" text="Movie name" textFill="#f8f5f5" />
+            <TextField fx:id="customerName" layoutX="128.0" layoutY="124.0" prefHeight="25.0" prefWidth="255.0" />
+            <Label layoutX="21.0" layoutY="97.0" text="ID customer" textFill="#f5f4f4" />
          </children>
       </Pane>
-      <TableView fx:id="rentTable" layoutX="524.0" layoutY="77.0" onMouseClicked="#getItem" prefHeight="406.0" prefWidth="321.0">
+      <TableView fx:id="rentTable" layoutX="524.0" layoutY="77.0" onMouseClicked="#getItem" prefHeight="501.0" prefWidth="321.0">
         <columns>
           <TableColumn fx:id="movieId" prefWidth="78.0" text="Movie ID" />
           <TableColumn fx:id="titleMovie" prefWidth="242.0" text="Movie Name" />
         </columns>
       </TableView>
-      <TableView fx:id="rentTable1" layoutX="845.0" layoutY="78.0" prefHeight="406.0" prefWidth="261.0">
+      <TableView fx:id="rentTable1" layoutX="845.0" layoutY="78.0" prefHeight="501.0" prefWidth="261.0">
         <columns>
           <TableColumn fx:id="customerID" prefWidth="86.0" text="ID Customer" />
           <TableColumn fx:id="customeName" prefWidth="174.0" text="Customer Name" />
+        </columns>
+      </TableView>
+      <TableView fx:id="rentDataTable" layoutX="7.0" layoutY="340.0" prefHeight="238.0" prefWidth="506.0">
+        <columns>
+          <TableColumn fx:id="pickUpDate" prefWidth="242.0" text="PickUPMovie" />
+          <TableColumn fx:id="returnDate" prefWidth="263.0" text="Return Movie" />
         </columns>
       </TableView>
    </children>

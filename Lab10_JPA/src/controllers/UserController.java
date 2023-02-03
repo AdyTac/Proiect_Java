@@ -65,9 +65,7 @@ public class UserController {
 	}
 	@FXML
 	private void addNewrRgister(ActionEvent event) {
-		UserServices userService = new UserServices();
-		LoginUser new1=new LoginUser();
-
+		
 		String user=registerUserField.getText();
 		String password=registerPasswField.getText();
 		
@@ -76,6 +74,9 @@ public class UserController {
 			showAlert1();
 		}else
 		{
+		UserServices userService = new UserServices();
+		LoginUser new1=new LoginUser();
+
 		new1.setPassword(password);
 		new1.setUser(user);
 		

@@ -30,20 +30,20 @@ public class AddMovieDao extends Dao<MovieProduction> {
 		}
 	}
 	public List<MovieProduction> find(String name) {
+		System.out.println(name);
 		EntityManager em = getEntityManager();
 		CriteriaBuilder cb = em.getCriteriaBuilder();
-		CriteriaQuery<MovieProduction> cr = cb.createQuery(MovieProduction.class);
-		
-		Root<MovieProduction> root = cr.from(MovieProduction.class);
-		
+		CriteriaQuery<MovieProduction> q = cb.createQuery(MovieProduction.class);
+
+		Root<MovieProduction> c = q.from(MovieProduction.class);
 		ParameterExpression<String> paramName = cb.parameter(String.class);
-	//	cr.select(root).where(cb.like(root.get("type_of"), name));
-		cr.select(root).where(cb.like(root.get("movieName"), paramName));
-		TypedQuery<MovieProduction> query = em.createQuery(cr);
+		q.select(c).where(cb.equal(c.get("title"), paramName));
+		TypedQuery<MovieProduction> query = em.createQuery(q);
 		query.setParameter(paramName, name);
-		
+		System.out.println(paramName);
 		List<MovieProduction> results = query.getResultList();
 		return results;
+		
 	}
 
 

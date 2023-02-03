@@ -45,6 +45,8 @@ public class MenuController {
 	@FXML
 	private Button deleteButton;
 	@FXML
+	private Button searchButton;
+	@FXML
 	private Button removeGenre;
 	@FXML
 	private Button rentAMovieButton;
@@ -52,6 +54,8 @@ public class MenuController {
 	private Button distributionButton;
 	@FXML
 	private TextField newTypeOf;
+	@FXML
+	private TextField searchField;
 	@FXML
 	private TextField removeField;
 	@FXML
@@ -133,7 +137,7 @@ try {
 		MovieService  newTypee= new MovieService();
 		KindOfMovie newTypeof= new KindOfMovie();
 
-		if(newTypeOf.getText().equals(" "))
+		if(newTypeOf.getText().equals(""))
 		{
 			showAlert();
 		}
@@ -307,6 +311,47 @@ try {
 		}
 		
 	}
+	@FXML
+	private void searchMovie(ActionEvent ee)
+	{
+		String searchMovie =searchField.getText();
+		
+		if(searchField.getText().equals(""))
+		{
+			showAlert2(); 
+		}
+		else
+		{
+			AddMovieService newService =new AddMovieService();
+			try {   
+					newService.findType(searchMovie);
+					searchField.clear();
+				
+					System.out.println("We found the Movie !");
+					showAlert3();
+				} catch (Exception e1) {
+					e1.printStackTrace();
+					System.out.println("We didn't find the movie !");
+					searchField.clear();
+					searchField.setText("We didn't find the movie !");
+				}
+		}
+	}
+	private void showAlert2() {
+		Alert alert = new Alert(AlertType.WARNING);
+		alert.setTitle("Warning alert");
+		alert.setHeaderText("Invalin input !");
+		alert.setContentText("Pleas type the movie you want to search!");
+		alert.showAndWait();
+	}
+	private void showAlert3() {
+		Alert alert = new Alert(AlertType.CONFIRMATION);
+		alert.setTitle("We found the Movie ");
+		alert.setHeaderText("We found the Movie !");
+		alert.setContentText("The movie is in the database !");
+		alert.showAndWait();
+	}
+	
 	
 	
 	

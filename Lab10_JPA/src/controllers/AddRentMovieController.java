@@ -14,8 +14,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import model.Customer;
 import model.MovieProduction;
+import model.Rentdata;
 import services.AddMovieService;
 import services.CustomerService;
+import services.RentDataService;
 
 public class AddRentMovieController {
 	@FXML
@@ -40,6 +42,13 @@ public class AddRentMovieController {
 	private TextField customerIDField;
 	@FXML 
 	private TextField 	customerName;
+	@FXML
+	private TableView<Rentdata> rentDataTable;
+	@FXML
+	 private TableColumn<Rentdata, String> pickUpDate;
+	@FXML
+	private TableColumn<Rentdata,String> returnDate;
+	
 	
 	Integer index;
 
@@ -58,6 +67,14 @@ public class AddRentMovieController {
 		customerID.setCellValueFactory(new PropertyValueFactory<Customer,Integer>("idCustomer"));
 		customeName.setCellValueFactory(new PropertyValueFactory<Customer,String>("name"));
 		rentTable1.setItems(listOfCustomer);
+		
+		RentDataService newRent= new RentDataService();
+		List<Rentdata> allRent = newRent.getAllUsers();
+		ObservableList<Rentdata> listOfRent= FXCollections.observableArrayList(new ArrayList<Rentdata>(allRent));
+		pickUpDate.setCellValueFactory(new PropertyValueFactory<Rentdata,String>("pickUpData"));
+		returnDate.setCellValueFactory(new PropertyValueFactory<Rentdata,String>("returnData"));
+		rentDataTable.setItems(listOfRent);
+		
 	}
 	
 	
@@ -73,6 +90,8 @@ public class AddRentMovieController {
 	 titelField.setText(titleMovie.getCellData(index).toString());
 	 customerName.setText(customeName.getCellData(index).toString());
 	 customerIDField.setText(customerID.getCellData(index).toString());
+	
+	 
 	 }
 
 }

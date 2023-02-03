@@ -38,7 +38,6 @@ public class DistributionDao extends Dao<Distribution> {
 		Root<Distribution> root = cr.from(Distribution.class);
 		
 		ParameterExpression<String> paramName = cb.parameter(String.class);
-	//	cr.select(root).where(cb.like(root.get("type_of"), name));
 		cr.select(root).where(cb.like(root.get("director"), paramName));
 		TypedQuery<Distribution> query = em.createQuery(cr);
 		query.setParameter(paramName, name);

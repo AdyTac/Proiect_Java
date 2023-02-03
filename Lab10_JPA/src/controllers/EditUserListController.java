@@ -99,7 +99,12 @@ public class EditUserListController{
 		String user=userField.getText();
 		String passw=passwField.getText();
 		String email=emailField.getText();
-		
+		if(nameField.getText().equals("") && firstNameField.getText().equals("")&&userField.getText().equals("")&&emailField.getText().equals("")&&emailField.getText().equals(""))
+		{
+			showAlert();
+		}
+		else 
+		{
 		newObj.setName(name);
 		newObj.setFirstname(firstName);
 		newObj.setUser(user);
@@ -120,7 +125,7 @@ public class EditUserListController{
 		passwField.clear();
 		emailField.clear();
 		userID.clear();
-		
+		}
 	}
 	@FXML
 	private void updateUser(ActionEvent e2){

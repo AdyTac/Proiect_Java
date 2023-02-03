@@ -6,9 +6,6 @@ import dao.ActorDao;
 import model.Actor;
 import model.MovieProduction;
 
-
-
-
 public class ActorService {
 	private ActorDao actorDao;
 

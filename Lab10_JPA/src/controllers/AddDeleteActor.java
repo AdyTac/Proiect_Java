@@ -66,20 +66,18 @@ public class AddDeleteActor {
 	@FXML
 	private void addNewActor(ActionEvent e1)
 	{
-		ActorService  newActorService= new ActorService();
-		Actor newActor=new Actor();
 		
-		
-		
-		if(nameField.getText().equals(" ") && nameFirstField.getText().equals(" ") && rolesField.getText().equals(" "))
+		String name=nameField.getText();
+		String firstname=nameFirstField.getText();
+		String roles=rolesField.getText();
+	 	if(nameField.getText().equals("") && nameFirstField.getText().equals("") && rolesField.getText().equals(""))
 		{
 			showAlert();
 		}
 		else
 		{
-			String name=nameField.getText();
-			String firstname=nameFirstField.getText();
-			String roles=rolesField.getText();
+			ActorService  newActorService= new ActorService();
+			Actor newActor=new Actor();	
 	
 		newActor.setActorName(name);
 		newActor.setActorFirstName(firstname);
@@ -110,7 +108,7 @@ public class AddDeleteActor {
 		 rolesField.setText(actorRole.getCellData(index).toString());
 	  }
 	 @FXML
-	 private void updateUser(ActionEvent e2){
+	    private void updateUser(ActionEvent e2){
 		ActorService  newActorService= new ActorService();
 		String idStr =idField.getText();
 		int id = Integer.parseInt(idStr);

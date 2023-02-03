@@ -49,6 +49,8 @@ public class AddDeleteMovie {
 	@FXML
 	private Button refreshButton;
 	@FXML
+	private Button clearField;
+	@FXML
 	private TextField deleteMovieField;
 	 @FXML
 	private DatePicker myDatePicker;
@@ -107,6 +109,12 @@ public class AddDeleteMovie {
 		AddMovieService newObject=new AddMovieService();
 		MovieProduction newMovi=new MovieProduction();
 		
+		if(movieNameField.getText().equals("") && homePageField.getText().equals("") && runTimeField.getText().equals("")&& myDatePicker.getValue().equals(""))
+		{
+			showAlert();
+		}
+		else
+		{
 		String title=movieNameField.getText();
 		newMovi.setTitle(title);
 		
@@ -181,6 +189,7 @@ public class AddDeleteMovie {
 		rolesField.clear();
 		directorNameField.clear();
 		scenaristField.clear();
+		}
 	}
 	 @FXML
 	void getItem(MouseEvent e) {
@@ -248,6 +257,9 @@ public class AddDeleteMovie {
     	newMovi.setOverview(overView);
     	
     	LocalDate myDate = myDatePicker.getValue();
+    	String dataM=myDate.toString();
+	    System.out.println(dataM);
+	    newMovi.setReleaseDate(dataM);
     	try {
     		newObject.updateUser(newMovi);
 		} catch (Exception e) {
@@ -279,6 +291,20 @@ public class AddDeleteMovie {
 		overView.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("overview"));
 		movieTable.setItems(listMovie);
 	}
+	@FXML
+	private void clearTextFields(ActionEvent e2)
+	{
+		idMovieField.clear();
+		movieNameField.clear();
+		bugetTextField.clear();
+	    homePageField.clear();
+		ratingField.clear();
+		runTimeField.clear();
+		overViewField.clear();
+		myDatePicker.setValue(null);
+	
+	}
+	
 	
 	private void showAlert() {
 		Alert alert = new Alert(AlertType.WARNING);

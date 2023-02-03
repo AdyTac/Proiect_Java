@@ -40,7 +40,6 @@ public class MovieDao extends Dao<KindOfMovie> {
 		Root<KindOfMovie> root = cr.from(KindOfMovie.class);
 		
 		ParameterExpression<String> paramName = cb.parameter(String.class);
-	//	cr.select(root).where(cb.like(root.get("type_of"), name));
 		cr.select(root).where(cb.equal(root.get("type_of"), paramName));
 		TypedQuery<KindOfMovie> query = em.createQuery(cr);
 		query.setParameter(paramName, name);
