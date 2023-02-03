@@ -129,6 +129,9 @@ public class AddDeleteMovie {
     	newMovi.setOverview(overView);
     	
     	LocalDate myDate = myDatePicker.getValue();
+    	String dataM=myDate.toString();
+	    System.out.println(dataM);
+	    newMovi.setReleaseDate(dataM);
     	
     	ActorService  newActorService= new ActorService();
 		Actor newActor=new Actor();
@@ -193,6 +196,7 @@ public class AddDeleteMovie {
 		 bugetTextField.setText(budget.getCellData(index).toString());
 		 runTimeField.setText(runtime.getCellData(index).toString());
 		 ratingField.setText(IMDB_rating.getCellData(index).toString());
+		 myDatePicker.setPromptText(releaseDate.getCellData(index).toString());
 		 
          }
 	@FXML

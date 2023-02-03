@@ -28,8 +28,8 @@ public class ActorService {
 		actorDao.update(updatedUser);
 	}
 	
-	public void remove(Actor user, int Id) {
-		actorDao.remove(user, Id);
+	public void remove(Actor user, int id) {
+		actorDao.remove(user, id);
 	}
 	public Actor find(int id) {
 		return  actorDao.find(id);

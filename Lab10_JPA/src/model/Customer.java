@@ -2,13 +2,7 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.Date;
 
-
-/**
- * The persistent class for the customer database table.
- * 
- */
 @Entity
 @NamedQuery(name="Customer.findAll", query="SELECT c FROM Customer c")
 public class Customer implements Serializable {
@@ -18,8 +12,7 @@ public class Customer implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idCustomer;
 
-	@Temporal(TemporalType.DATE)
-	private Date date;
+	private String date;
 
 	private String email;
 
@@ -38,11 +31,11 @@ public class Customer implements Serializable {
 		this.idCustomer = idCustomer;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return this.date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

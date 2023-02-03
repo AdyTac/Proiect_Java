@@ -1,5 +1,6 @@
 package controllers;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
@@ -14,6 +15,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import model.Customer;
+import model.MovieProduction;
+import services.AddMovieService;
 import services.CustomerService;
 
 public class CustomerControler {
@@ -61,6 +64,7 @@ public class CustomerControler {
 		nameCustomer.setCellValueFactory(new PropertyValueFactory<Customer,String>("name"));
 		firstNameCustomer.setCellValueFactory(new PropertyValueFactory<Customer,String>("firstName"));
 		emailCustomer.setCellValueFactory(new PropertyValueFactory<Customer,String>("email"));
+		registerDateCustom.setCellValueFactory(new PropertyValueFactory<Customer,String>("date"));
 		
 		customerTable.setItems(listOfCustomer);
 		System.out.println(listOfCustomer);
@@ -77,10 +81,15 @@ public class CustomerControler {
 		String name=customername.getText();
 		String firstName=customerFirstname.getText();
 		String email=customerEmail.getText();
+		
+		LocalDate myDate = customerDate.getValue();
+		String dataM=myDate.toString();
+	    System.out.println(dataM);	
 
 		newCust.setName(name);
 		newCust.setFirstName(firstName);
 		newCust.setEmail(email);
+		newCust.setDate(dataM);
 		try {
 			newCustomST.updateUser(newCust);
 		} catch (Exception e) {
@@ -103,9 +112,50 @@ public class CustomerControler {
 	 customerFirstname.setText(firstNameCustomer.getCellData(index).toString());
 	 customername.setText(nameCustomer.getCellData(index).toString());
 	 customerEmail.setText(emailCustomer.getCellData(index).toString());
+	 customerDate.setPromptText(registerDateCustom.getCellData(index).toString());
   }
-    
-    
-	
+    @FXML
+	private void deleteCustomer(ActionEvent e2)
+	{
+    	CustomerService  newCustomST= new CustomerService();
+		String idStr =customerID.getText();
+		int id = Integer.parseInt(idStr);
+		Customer newCustomerST =new Customer();
+		try {
+			newCustomST.remove(newCustomerST, id);
+			initialize();
+			} catch (Exception e) {
+			
+				e.printStackTrace();
+			}
+	}
+    @FXML
+	 private void addnewCustomer(ActionEvent e2){
+    	CustomerService  newCustomST= new CustomerService();
+    	Customer newCust=new Customer();
+    	
 
+		String name=customername.getText();
+		String firstName=customerFirstname.getText();
+		String email=customerEmail.getText();
+		
+		LocalDate myDate = customerDate.getValue();
+		String dataM=myDate.toString();
+	    System.out.println(dataM);	
+		
+		newCust.setName(name);
+		newCust.setFirstName(firstName);
+		newCust.setEmail(email);
+		newCust.setDate(dataM);
+		try {
+			newCustomST.addUser(newCust);
+			 initialize();
+		   } catch (Exception e) {
+			e.printStackTrace();
+			}
+		customername.clear();
+		customerFirstname.clear();
+		customerEmail.clear();
+		customerID.clear();
+    }
 }

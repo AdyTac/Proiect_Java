@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+   <children>
+      <Pane layoutY="2.0" prefHeight="90.0" prefWidth="600.0" style="-fx-background-color: #424354;">
+         <children>
+            <Label layoutX="125.0" layoutY="28.0" text="Welcom to Movie Application" textFill="#fffdfd">
+               <font>
+                  <Font name="Bauhaus 93" size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="168.0" layoutY="95.0" prefHeight="307.0" prefWidth="435.0" style="-fx-background-color: #424354;">
+         <children>
+            <ImageView fitHeight="254.0" fitWidth="407.0" layoutX="11.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imageView/Poster2.JPG" />
+               </image>
+            </ImageView>
+            <Label layoutX="160.0" layoutY="3.0" text="Greetings" textFill="#fcfcfc">
+               <font>
+                  <Font name="Bauhaus 93" size="27.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutY="95.0" prefHeight="307.0" prefWidth="164.0" style="-fx-background-color: #424354;">
+         <children>
+            <TextArea editable="false" layoutX="3.0" layoutY="5.0" prefHeight="296.0" prefWidth="158.0" promptText="testAteaFild" text="Welcome to the new application for accessing movies and the possibility to rent them &#10;You do not have the right to distribute this application because it is unique and not for sale.&#10;You are allowed to use it only with the consent of the producer, for contact use the email address adrian.turcu@student.unitbv.ro." wrapText="true" />
+         </children></Pane>
+   </children>
+</AnchorPane>

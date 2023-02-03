@@ -24,8 +24,8 @@ public class CustomerService {
 			customDao.update(updatedUser);
 		}
 		
-		public void remove(Customer user, int Id) {
-			customDao.remove(user, Id);
+		public void remove(Customer user, int id) {
+			customDao.remove(user, id);
 		}
 		public Customer find(int id) {
 			return  customDao.find(id);

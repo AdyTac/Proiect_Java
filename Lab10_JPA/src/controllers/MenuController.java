@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -56,7 +57,9 @@ public class MenuController {
 	@FXML
 	private TextField timeLabel;
 	@FXML
-	private Label newTime;
+	private TextArea testAteaFild;
+	@FXML
+	private Label welcomlabelScreen;
 	@FXML
 	private TextField genreIDField;
 	@FXML
@@ -91,9 +94,6 @@ public class MenuController {
 		MovieService newGener=new MovieService();
 		List<KindOfMovie> allGenre=newGener.getAllUsers();
 	
-		//movieListView.setItems(FXCollections.observableArrayList(new ArrayList<MovieProduction>(allMovie)));
-		//genreListView.setItems(FXCollections.observableArrayList(new ArrayList<KindOfMovie>(allGenre)));
-		
 		ObservableList<MovieProduction> listMovie= FXCollections.observableArrayList(new ArrayList<MovieProduction>(allMovie));
 		movieId.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("movieId"));
 		title.setCellValueFactory(new PropertyValueFactory<MovieProduction,String>("title"));
@@ -116,7 +116,6 @@ public class MenuController {
 	@FXML
 	private void actorInterface(ActionEvent e1) {
 try {
-			
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resourceView/AddActor.fxml"));
 			Parent root = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
@@ -128,13 +127,18 @@ try {
 			e.printStackTrace();
 			showAlert();
 		}
-		
 	}
 	@FXML
 	private void typeOfMoviInterface(ActionEvent e2) {
 		MovieService  newTypee= new MovieService();
 		KindOfMovie newTypeof= new KindOfMovie();
-		
+
+		if(newTypeOf.getText().equals(" "))
+		{
+			showAlert();
+		}
+		else
+		{
 		String newType=newTypeOf.getText(); 
 		newTypeof.setType_of(newType);
 		System.out.println(newType);
@@ -143,10 +147,10 @@ try {
 			newTypee.addUser(newTypeof);
 			System.out.println("The Information are saved !");
 			newTypeOf.setText("");
-			
 		} catch (Exception e) {
 		    e.printStackTrace();
 		    showAlert();
+		}
 		}
 	}
 	@FXML

@@ -1,6 +1,5 @@
 package controllers;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
@@ -18,7 +17,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import model.Actor;
 import services.ActorService;
-
 
 public class AddDeleteActor {
 	@FXML
@@ -71,9 +69,17 @@ public class AddDeleteActor {
 		ActorService  newActorService= new ActorService();
 		Actor newActor=new Actor();
 		
-		String name=nameField.getText();
-		String firstname=nameFirstField.getText();
-		String roles=rolesField.getText();
+		
+		
+		if(nameField.getText().equals(" ") && nameFirstField.getText().equals(" ") && rolesField.getText().equals(" "))
+		{
+			showAlert();
+		}
+		else
+		{
+			String name=nameField.getText();
+			String firstname=nameFirstField.getText();
+			String roles=rolesField.getText();
 	
 		newActor.setActorName(name);
 		newActor.setActorFirstName(firstname);
@@ -89,6 +95,7 @@ public class AddDeleteActor {
 		rolesField.clear();
 		nameFirstField.clear();
 		idField.clear();
+	}
 	}
 	 @FXML
 	    void getItem(MouseEvent e) {
@@ -121,7 +128,7 @@ public class AddDeleteActor {
 			newActorService.updateUser(newActor);
 		} catch (Exception e) {
 			e.printStackTrace();
-			}
+		}
 		nameField.clear();
 		rolesField.clear();
 		nameFirstField.clear();
@@ -131,7 +138,6 @@ public class AddDeleteActor {
 	private void deleteActor(ActionEvent e2)
 	{
 		ActorService newObj= new ActorService();
-		
 		String idStr =idField.getText();
 		int id = Integer.parseInt(idStr);
 		Actor newActor= new Actor();
@@ -141,7 +147,7 @@ public class AddDeleteActor {
 			
 				e.printStackTrace();
 				showAlert();
-			}
+		}
 		nameField.clear();
 		rolesField.clear();
 		nameFirstField.clear();
@@ -159,8 +165,6 @@ public class AddDeleteActor {
 		actorRole.setCellValueFactory(new PropertyValueFactory<Actor,String>("actorRole"));
 		actorTableView.setItems(listOffActors);
 	}
-	
-	
 	private void showAlert() {
 		Alert alert = new Alert(AlertType.WARNING);
 		alert.setTitle("Warning alert");

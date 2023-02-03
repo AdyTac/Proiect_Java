@@ -27,8 +27,8 @@ public class DistributionService {
 		addDistribDao.update(updatedUser);
 	}
 	
-	public void remove(Distribution user, int Id) {
-		addDistribDao.remove(user, Id);
+	public void remove(Distribution user, int id) {
+		addDistribDao.remove(user, id);
 	}
 	public Distribution find(int id) {
 		return  addDistribDao.find(id);

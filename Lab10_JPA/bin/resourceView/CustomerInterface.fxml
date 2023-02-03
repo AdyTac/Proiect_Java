@@ -6,6 +6,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -23,9 +25,12 @@
       </Pane>
       <Pane layoutY="106.0" prefHeight="294.0" prefWidth="789.0" style="-fx-background-color: #424354;">
          <children>
-            <Button fx:id="addCustomerButton" layoutX="641.0" layoutY="55.0" mnemonicParsing="false" style="-fx-background-color: #666f80;" text="Add Customer" textFill="#f8f7f7" />
-            <Button fx:id="CustomerUpdate" layoutX="641.0" layoutY="97.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #666f80;" text="Update" textFill="#fcfcfc" />
-            <Button fx:id="customerDelete" layoutX="641.0" layoutY="138.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #666f80;" text="Delete" textFill="#fcfcfc" />
+            <Button fx:id="addCustomerButton" layoutX="381.0" layoutY="81.0" mnemonicParsing="false" onAction="#addnewCustomer" style="-fx-background-color: #666f80;" text="Add Customer" textFill="#f8f7f7">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="CustomerUpdate" layoutX="381.0" layoutY="123.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #666f80;" text="Update" textFill="#fcfcfc" />
+            <Button fx:id="customerDelete" layoutX="381.0" layoutY="164.0" mnemonicParsing="false" onAction="#deleteCustomer" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #666f80;" text="Delete" textFill="#fcfcfc" />
             <TextField fx:id="customerID" layoutX="185.0" layoutY="58.0" prefHeight="25.0" prefWidth="174.0" />
             <TextField fx:id="customername" layoutX="185.0" layoutY="97.0" prefHeight="25.0" prefWidth="174.0" />
             <TextField fx:id="customerFirstname" layoutX="185.0" layoutY="135.0" prefHeight="25.0" prefWidth="174.0" />
@@ -56,6 +61,11 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
+            <ImageView fitHeight="176.0" fitWidth="228.0" layoutX="531.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/imageView/Poster.JPG" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Pane layoutX="7.0" layoutY="407.0" prefHeight="294.0" prefWidth="776.0" style="-fx-background-color: #424354;">

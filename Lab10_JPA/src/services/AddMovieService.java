@@ -27,8 +27,8 @@ public class AddMovieService {
 		addMovieDao.update(updatedUser);
 	}
 	
-	public void remove(MovieProduction user, int Id) {
-		addMovieDao.remove(user, Id);
+	public void remove(MovieProduction user, int id) {
+		addMovieDao.remove(user, id);
 	}
 
 	public List<MovieProduction> getAllUsers() {

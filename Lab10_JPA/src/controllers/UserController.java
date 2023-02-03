@@ -64,13 +64,18 @@ public class UserController {
 		}
 	}
 	@FXML
-	private void addNewUser(ActionEvent event) {
+	private void addNewrRgister(ActionEvent event) {
 		UserServices userService = new UserServices();
 		LoginUser new1=new LoginUser();
 
 		String user=registerUserField.getText();
 		String password=registerPasswField.getText();
 		
+		if(registerUserField.getText().equals("") || registerPasswField.getText().equals(""))
+		{
+			showAlert1();
+		}else
+		{
 		new1.setPassword(password);
 		new1.setUser(user);
 		
@@ -84,12 +89,20 @@ public class UserController {
 			}
 		registerUserField.clear();
 		registerPasswField.clear();
+		}
 	}
 	@FXML
 	private void LoginToApplication(ActionEvent event) {
+		
 		String loginUser=userField.getText();
 		String loginPassword=passwField.getText();
 		
+		if(userField.getText().equals(" ")||passwField.getText().equals(""))
+		{
+			showAlert();
+		}
+		else
+		{
 		UserServices userService = new UserServices();
 		try {
 		System.out.println(userService.findUser(loginUser, loginPassword));
@@ -104,6 +117,7 @@ public class UserController {
 			stage.setScene(new Scene(root));
 			stage.setResizable(false);
 			stage.show();
+			showWelcomScreen();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -112,6 +126,7 @@ public class UserController {
 			showAlert();
 			
 			e.printStackTrace();
+		}
 		}
 		
 	}
@@ -122,7 +137,28 @@ public class UserController {
 		alert.setContentText("Wrong user or password");
 		alert.showAndWait();
 	}
-	
+	private void showAlert1() {
+		Alert alert = new Alert(AlertType.WARNING);
+		alert.setTitle("Warning alert");
+		alert.setHeaderText("Invalin input !");
+		alert.setContentText("You need to insert corect user and password !");
+		alert.showAndWait();
+	}
+	private void showWelcomScreen() {
+		try {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resourceView/WelcomToMovieApplication.fxml"));
+		Parent root = (Parent) fxmlLoader.load();
+		Stage stage = new Stage();
+		stage.setTitle("Welcom To Movie Application ");
+		stage.setScene(new Scene(root));
+		stage.setResizable(false);
+		stage.show();
+		
+		} catch (Exception e) {
+		System.out.println("Welcome screen");
+		  e.printStackTrace();
+	}
+	}
 	
 	
 }
